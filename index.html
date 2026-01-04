@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="hexa.png" type="x-png">
-    <title>HexaCore Studios</title>
+    <title>HexaCore Studios - Convertimos tus ideas en Experiencias Inolvidables</title>
     <meta name="description" content="HexaCore Studios es un estudio de desarrollo especializado en crear experiencias únicas. Más de 5 años de experiencia innovando.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -433,6 +432,108 @@
             font-size: 0.9rem;
         }
 
+        /* --- ESTILOS PARA LA BANDEJA DE ENTRADA --- */
+        #bandeja-entrada {
+            display: none; /* Oculto por defecto */
+            padding: 100px 0;
+            background-color: var(--surface-color);
+        }
+        #bandeja-entrada.visible {
+            display: block; /* Se muestra cuando se activa */
+        }
+        .bandeja-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--background-color);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .bandeja-container h1 {
+            font-family: var(--font-family);
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+        .message-list {
+            list-style: none;
+            max-height: 500px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        .message-item {
+            background-color: var(--surface-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .message-author {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+        .message-email {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        .message-timestamp {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+        .message-content {
+            color: var(--text-secondary);
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .no-messages {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            padding: 40px 20px;
+        }
+        .bandeja-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .btn-clear {
+            background-color: var(--secondary-color);
+            color: var(--text-primary);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        .btn-clear:hover {
+            background-color: #fff;
+            color: var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(255, 0, 245, 0.4);
+        }
+        .back-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+
         @media (max-width: 992px) {
             .header-actions {
                 flex-direction: column;
@@ -535,7 +636,7 @@
                     </ul>
                 </div>
                 <div class="minecraft-image">
-                    <img src="https://z-cdn-media.chatglm.cn/files/882167a7-6154-4661-ab66-3217da733e78.png?auth_key=1867400614-9dd15cc5c8f940e0bb3eb6dc9f9da04c-0-91100f0d56b7e279aa6f3d0d2faee490" alt="Arte de Tecnoblade">
+                    <img src="https://images.unsplash.com/photo-1633723968494-333fd855e3a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Arte de Tecnoblade">
                 </div>
             </div>
         </section>
@@ -576,12 +677,23 @@
                         <div class="team-card">
                             <img src="https://z-cdn-media.chatglm.cn/files/5d575ce1-7c89-4254-a7eb-4b43d9346bb9.png?auth_key=1867398221-612741d4cd2849d5b076a5c58059d76a-0-bb9c68bc17bdd0dd0d9cd7a38041241f" alt="Foto de SxthRodrixCT">
                             <h3>SxthRodrixCT</h3>
-                            <p>Administrador del Studio</p>
+                            <p>Administrador de Servidor</p>
                         </div>
                         <div class="team-card">
                             <img src="https://z-cdn-media.chatglm.cn/files/8774a3c9-4763-4548-bf03-89ab48d67119.png?auth_key=1867397290-e8250f1f4d8144d5bf8ebc33a35f0613-0-3795d3de640a4f99cd0bc14058846de0" alt="Foto de benjaelnoo2">
                             <h3>benjaelnoo2</h3>
-                            <p>Administrador del Studio</p>
+                            <p>Administrador de Comunidad</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-group">
+                    <h3>Mods</h3>
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <img src="https://z-cdn-media.chatglm.cn/files/a39e3ee9-7457-4b11-9551-364a96417a8a.png?auth_key=1867498288-42b9835dab2541d587e9452e7b09d4ab-0-b747e89f8693ea85031e4f7c92ac426c" alt="Foto de Craisako">
+                            <h3>Craisako</h3>
+                            <p>Mod Principal</p>
                         </div>
                     </div>
                 </div>
@@ -616,7 +728,7 @@
                 <h2>Nuestras Estadísticas</h2>
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <h3>19+</h3>
+                        <h3>1M+</h3>
                         <p>Descargas del Cliente</p>
                     </div>
                     <div class="stat-item">
@@ -624,7 +736,7 @@
                         <p>Proyectos Completados</p>
                     </div>
                     <div class="stat-item">
-                        <h3>2k+</h3>
+                        <h3>100K+</h3>
                         <p>Usuarios Activos</p>
                     </div>
                     <div class="stat-item">
@@ -657,9 +769,24 @@
                 </div>
                 <div class="contact-info">
                     <h2>Información de Contacto</h2>
-                    <p><i class="fas fa-envelope"></i> hexacore@gmail.com</p>
+                    <p><i class="fas fa-envelope"></i> hola@hexacorestudios.com</p>
                     <p><i class="fab fa-discord"></i> Únete a nuestro Discord</p>
                     <p><i class="fas fa-clock"></i> Lunes a Viernes, 9:00 - 18:00 (GMT)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="bandeja-entrada">
+            <div class="bandeja-container">
+                <h1>Bandeja de Entrada</h1>
+                <ul id="messages-list" class="message-list">
+                </ul>
+                <div id="no-messages" class="no-messages" style="display: none;">
+                    No hay mensajes nuevos.
+                </div>
+                <div class="bandeja-actions">
+                    <button id="clear-btn" class="btn-clear">Borrar Todos</button>
+                    <a href="#contact" class="back-link">← Volver al formulario</a>
                 </div>
             </div>
         </section>
@@ -702,7 +829,29 @@
                 icon.classList.add('fa-bars');
             });
         });
-    </script>
 
-</body>
-</html>
+        const contactForm = document.querySelector('.contacto form');
+        const bandejaEntrada = document.getElementById('bandeja-entrada');
+        const messagesList = document.getElementById('messages-list');
+        const noMessagesDiv = document.getElementById('no-messages');
+        const clearBtn = document.getElementById('clear-btn');
+
+        function displayMessages() {
+            const messages = JSON.parse(localStorage.getItem('hexacore_messages')) || [];
+            messagesList.innerHTML = '';
+
+            if (messages.length === 0) {
+                noMessagesDiv.style.display = 'block';
+                clearBtn.style.display = 'none';
+            } else {
+                noMessagesDiv.style.display = 'none';
+                clearBtn.style.display = 'inline-block';
+                
+                messages.forEach(msg => {
+                    const li = document.createElement('li');
+                    li.className = 'message-item';
+                    
+                    li.innerHTML = `
+                        <div class="message-header">
+                            <div>
+                                <span class="message-author">${msg.name}</span>
