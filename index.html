@@ -596,6 +596,91 @@
             text-decoration: underline;
         }
 
+        /* --- ESTILOS PARA LA PÁGINA DE MANTENIMIENTO --- */
+        .maintenance-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--background-color);
+            z-index: 9999;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .maintenance-overlay.active {
+            display: flex;
+        }
+
+        .maintenance-icon {
+            font-size: 5rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .maintenance-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .maintenance-message {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .maintenance-time {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .maintenance-contact {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .maintenance-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .maintenance-social a {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .maintenance-social a:hover {
+            color: var(--primary-color);
+        }
+
+        .maintenance-hint {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
 
         @media (max-width: 992px) {
             .header-actions {
@@ -642,10 +727,34 @@
                 flex-direction: column;
                 gap: 2rem;
             }
+            .maintenance-title {
+                font-size: 2rem;
+            }
+            .maintenance-message {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Overlay de mantenimiento -->
+    <div class="maintenance-overlay" id="maintenanceOverlay">
+        <i class="fas fa-tools maintenance-icon"></i>
+        <h1 class="maintenance-title" data-i18n="maintenance.title">Sitio en Mantenimiento</h1>
+        <p class="maintenance-message" data-i18n="maintenance.message">
+            Estamos trabajando para mejorar tu experiencia. Volveremos pronto con nuevas características y mejoras.
+        </p>
+        <p class="maintenance-time" data-i18n="maintenance.time">Tiempo estimado: 2 horas</p>
+        <p class="maintenance-contact" data-i18n="maintenance.contact">
+            Para consultas urgentes, contáctanos en: <a href="mailto:support@hexacore.com">support@hexacore.com</a>
+        </p>
+        <div class="maintenance-social">
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p class="maintenance-hint">Presiona Ctrl+U para desactivar el modo mantenimiento</p>
+    </div>
 
     <header class="main-header">
         <nav class="main-nav container">
@@ -965,7 +1074,11 @@
                 "inbox.noMessages": "No hay mensajes nuevos.",
                 "inbox.clear": "Borrar Todos",
                 "inbox.back": "← Volver al formulario",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. Todos los derechos reservados."
+                "footer.copyright": "&copy; 2024 HexaCore Studios. Todos los derechos reservados.",
+                "maintenance.title": "Sitio en Mantenimiento",
+                "maintenance.message": "Estamos trabajando para mejorar tu experiencia. Volveremos pronto con nuevas características y mejoras.",
+                "maintenance.time": "Tiempo estimado: 2 horas",
+                "maintenance.contact": "Para consultas urgentes, contáctanos en:"
             },
             en: {
                 "nav.minecraft": "Minecraft",
@@ -1014,7 +1127,11 @@
                 "inbox.noMessages": "No new messages.",
                 "inbox.clear": "Clear All",
                 "inbox.back": "← Back to form",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. All rights reserved."
+                "footer.copyright": "&copy; 2024 HexaCore Studios. All rights reserved.",
+                "maintenance.title": "Site Under Maintenance",
+                "maintenance.message": "We are working to improve your experience. We'll be back soon with new features and improvements.",
+                "maintenance.time": "Estimated time: 2 hours",
+                "maintenance.contact": "For urgent inquiries, contact us at:"
             },
             fr: {
                 "nav.minecraft": "Minecraft",
@@ -1063,7 +1180,11 @@
                 "inbox.noMessages": "Aucun nouveau message.",
                 "inbox.clear": "Tout Supprimer",
                 "inbox.back": "← Retour au formulaire",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. Tous droits réservés."
+                "footer.copyright": "&copy; 2024 HexaCore Studios. Tous droits réservés.",
+                "maintenance.title": "Site en Maintenance",
+                "maintenance.message": "Nous travaillons à améliorer votre expérience. Nous serons de retour bientôt avec de nouvelles fonctionnalités et améliorations.",
+                "maintenance.time": "Durée estimée : 2 heures",
+                "maintenance.contact": "Pour les demandes urgentes, contactez-nous à :"
             },
             de: {
                 "nav.minecraft": "Minecraft",
@@ -1112,7 +1233,11 @@
                 "inbox.noMessages": "Keine neuen Nachrichten.",
                 "inbox.clear": "Alle löschen",
                 "inbox.back": "← Zurück zum Formular",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. Alle Rechte vorbehalten."
+                "footer.copyright": "&copy; 2024 HexaCore Studios. Alle Rechte vorbehalten.",
+                "maintenance.title": "Seite in Wartung",
+                "maintenance.message": "Wir arbeiten daran, Ihr Erlebnis zu verbessern. Wir werden bald mit neuen Funktionen und Verbesserungen zurück sein.",
+                "maintenance.time": "Geschätzte Zeit: 2 Stunden",
+                "maintenance.contact": "Für dringende Anfragen kontaktieren Sie uns unter:"
             },
             it: {
                 "nav.minecraft": "Minecraft",
@@ -1161,7 +1286,11 @@
                 "inbox.noMessages": "Nessun nuovo messaggio.",
                 "inbox.clear": "Cancella Tutto",
                 "inbox.back": "← Torna al modulo",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. Tutti i diritti riservati."
+                "footer.copyright": "&copy; 2024 HexaCore Studios. Tutti i diritti riservati.",
+                "maintenance.title": "Sito in Manutenzione",
+                "maintenance.message": "Stiamo lavorando per migliorare la tua esperienza. Torneremo presto con nuove funzionalità e miglioramenti.",
+                "maintenance.time": "Tempo stimato: 2 ore",
+                "maintenance.contact": "Per richieste urgenti, contattaci a:"
             },
             pt: {
                 "nav.minecraft": "Minecraft",
@@ -1172,7 +1301,7 @@
                 "nav.download": "Baixar HexaCore Client",
                 "hero.tagline1": "Transformamos suas ideias",
                 "hero.tagline2": "Em Experiências Inesquecíveis.",
-                "hero.description": "Somos um estúdio de desenvolvimento especializado na criação de experiências únicas. Com mais de 5 anos de experiência, projetamos e organizamos servidores, eventos e projetos de todas as escalas, garantindo inovação e qualidade em cada um.",
+                "hero.description": "Somos um estúdio de desenvolvimento especializado na criação de experiências únicas. Com mais de 5 anos de experiência, projetamos e organizamos servidores, eventos e projetos de todas as escalas, garantizando inovação e qualidade em cada um.",
                 "minecraft.title": "Equipe Minecraft",
                 "minecraft.description": "Com mais de 5 anos na indústria, dominamos a arte de criar mundos e experiências únicas dentro do Minecraft. De servidores personalizados a mapas épicos, sua visão é nosso próximo projeto.",
                 "minecraft.services.maps": "Criação de Mapas e Mundos",
@@ -1210,7 +1339,11 @@
                 "inbox.noMessages": "Nenhuma mensagem nova.",
                 "inbox.clear": "Limpar Tudo",
                 "inbox.back": "← Voltar ao formulário",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. Todos os direitos reservados."
+                "footer.copyright": "&copy; 2024 HexaCore Studios. Todos os direitos reservados.",
+                "maintenance.title": "Site em Manutenção",
+                "maintenance.message": "Estamos trabalhando para melhorar sua experiência. Voltaremos em breve com novos recursos e melhorias.",
+                "maintenance.time": "Tempo estimado: 2 horas",
+                "maintenance.contact": "Para consultas urgentes, entre em contato conosco em:"
             },
             zh: {
                 "nav.minecraft": "Minecraft",
@@ -1259,7 +1392,11 @@
                 "inbox.noMessages": "没有新消息。",
                 "inbox.clear": "清除全部",
                 "inbox.back": "← 返回表单",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. 保留所有权利。"
+                "footer.copyright": "&copy; 2024 HexaCore Studios. 保留所有权利。",
+                "maintenance.title": "网站维护中",
+                "maintenance.message": "我们正在努力改善您的体验。我们将很快带着新功能和新改进回来。",
+                "maintenance.time": "预计时间：2小时",
+                "maintenance.contact": "紧急咨询请联系："
             },
             ja: {
                 "nav.minecraft": "Minecraft",
@@ -1308,7 +1445,11 @@
                 "inbox.noMessages": "新しいメッセージはありません。",
                 "inbox.clear": "すべてクリア",
                 "inbox.back": "← フォームに戻る",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. 全著作権所有。"
+                "footer.copyright": "&copy; 2024 HexaCore Studios. 全著作権所有。",
+                "maintenance.title": "サイトメンテナンス中",
+                "maintenance.message": "あなたの体験を向上させるために努力しています。新機能と改善を加えてすぐに戻ります。",
+                "maintenance.time": "推定時間：2時間",
+                "maintenance.contact": "緊�急のお問い合わせはこちらまで："
             },
             ru: {
                 "nav.minecraft": "Minecraft",
@@ -1357,7 +1498,11 @@
                 "inbox.noMessages": "Нет новых сообщений.",
                 "inbox.clear": "Очистить все",
                 "inbox.back": "← Вернуться к форме",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. Все права защищены."
+                "footer.copyright": "&copy; 2024 HexaCore Studios. Все права защищены.",
+                "maintenance.title": "Сайт на Обслуживании",
+                "maintenance.message": "Мы работаем над улучшением вашего опыта. Скоро вернемся с новыми функциями и улучшениями.",
+                "maintenance.time": "Примерное время: 2 часа",
+                "maintenance.contact": "Для срочных вопросов, свяжитесь с нами по адресу:"
             },
             ar: {
                 "nav.minecraft": "Minecraft",
@@ -1406,7 +1551,11 @@
                 "inbox.noMessages": "لا توجد رسائل جديدة.",
                 "inbox.clear": "مسح الكل",
                 "inbox.back": "← العودة إلى النموذج",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. جميع الحقوق محفوظة."
+                "footer.copyright": "&copy; 2024 HexaCore Studios. جميع الحقوق محفوظة.",
+                "maintenance.title": "الموقع تحت الصيانة",
+                "maintenance.message": "نعمل على تحسين تجربتك. سنعود قريباً بميزات وتحسينات جديدة.",
+                "maintenance.time": "الوقت المقدر: 2 ساعات",
+                "maintenance.contact": "للاستفسارات العاجلة، تواصل معنا عبر:"
             },
             hi: {
                 "nav.minecraft": "Minecraft",
@@ -1417,9 +1566,9 @@
                 "nav.download": "HexaCore क्लाइंट डाउनलोड करें",
                 "hero.tagline1": "हम आपके विचारों को बदलते हैं",
                 "hero.tagline2": "अविस्मरणीय अनुभवों में।",
-                "hero.description": "हम अद्वितीय अनुभव बनाने में विशेषज्ञ एक विकास स्टूडियो हैं। 5 से अधिक वर्षों के अनुभव के साथ, हम सभी पैमानों पर सर्वर, घटनाओं और परियोजनाओं को डिजाइन और आयोजित करते हैं, प्रत्येक में नवाचार और गुणवत्ता सुनिश्चित करते हैं।",
+                "hero.description": "हम अद्वितीय अनुभव अनुभवों में विशेषज सभी पैमानों पर सर्वर, सभी पैमानों पर सर्वर, सभी पैमानों पर आयोजगुनित और गुणवतालिए।।",
                 "minecraft.title": "Minecraft टीम",
-                "minecraft.description": "उद्योग में 5 से अधिक वर्षों के साथ, हम Minecraft के भीतर दुनिया और अद्वितीय अनुभव बनाने की कला में माहिर हैं। अनुकूलित सर्वर से लेकर महाकाव्य नक्शे तक, आपकी दृष्टि हमारा अगला प्रोजेक्ट है।",
+                "minecraft.description": "उद्योग में 5 साल से साथ, हम Minecraft के भीतर अनुभवों की कला माहिर ह।। अनुकूलिए तक विशेष ज देख सभी पैमानों के दृषा प्रोजेक्ट महाकाव विजनया।।",
                 "minecraft.services.maps": "नक्शे और दुनिया बनाना",
                 "minecraft.services.plugins": "प्लगइन विकास",
                 "minecraft.services.textures": "बनावट और शेडर डिजाइन",
@@ -1440,282 +1589,29 @@
                 "collaborators.title": "सहयोगी",
                 "statistics.title": "हमारे आँकड़े",
                 "statistics.downloads": "क्लाइंट डाउनलोड",
-                "statistics.projects": "पूर्ण परियोजनाएँ",
-                "statistics.users": "सक्रिय उपयोगकर्ता",
+                "statistics.projects": "पूर्ण परियोजयोग",
+                "statistics.users": "सक्रिय उपयोगकर्त",
                 "statistics.experience": "वर्षों का अनुभव",
-                "contact.title": "हमें एक संदेश भेजें",
+                "contact.title": "हमें एक संदेश एक संदेश एक संदेश मैं।",
                 "contact.name": "नाम",
                 "contact.email": "ईमेल",
                 "contact.message": "संदेश",
-                "contact.send": "संदेश भेजें",
+                "contact.send": "संदेश",
                 "contact.info.title": "संपर्क जानकारी",
                 "contact.info.discord": "हमारे Discord में शामिल हों",
-                "contact.info.hours": "सोमवार से शुक्रवार, 9:00 - 18:00 (GMT)",
+                "contact.info.hours": "सोमवार से शुक्रवा, 9:00 - 18:00 (GMT)",
                 "inbox.title": "इनबॉक्स",
                 "inbox.noMessages": "कोई नया संदेश नहीं।",
                 "inbox.clear": "सभी साफ़ करें",
-                "inbox.back": "← फॉर्म पर वापस जाएं",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. सभी अधिकार सुरक्षित।"
+                "inbox.back": "← फॉर मोडू",
+                "footer.copyright": "&copy; 2024 HexaCore Studios. सभी अधिकार सुरक्ष।।",
+                "maintenance.title": "साइट रखरखाव में",
+                "maintenance.message": "हम आपके अनुभवों को बेहतर बनावट।। हम जल्द ह।।",
+                "maintenance.time": "अनुमानित समय: 2 घंटे",
+                "maintenance.contact": "तत्काल पूछव संपर्क व।"
             },
             ko: {
                 "nav.minecraft": "Minecraft",
                 "nav.team": "팀",
                 "nav.collaborators": "협력자",
-                "nav.statistics": "통계",
-                "nav.contact": "연락처",
-                "nav.download": "HexaCore 클라이언트 다운로드",
-                "hero.tagline1": "당신의 아이디어를",
-                "hero.tagline2": "잊을 수 없는 경험으로 바꿉니다.",
-                "hero.description": "우리는 독특한 경험을 만드는 데 전문화된 개발 스튜디오입니다. 5년 이상의 경험을 통해 우리는 모든 규모의 서버, 이벤트 및 프로젝트를 설계하고 조직하며, 각각에서 혁신과 품질을 보장합니다.",
-                "minecraft.title": "Minecraft 팀",
-                "minecraft.description": "업계에서 5년 이상의 경험을 통해 우리는 Minecraft 내에서 세계와 독특한 경험을 만드는 기술을 마스터했습니다. 맞춤형 서버부터 서사적인 맵까지, 당신의 비전이 우리의 다음 프로젝트입니다.",
-                "minecraft.services.maps": "맵과 월드 생성",
-                "minecraft.services.plugins": "플러그인 개발",
-                "minecraft.services.textures": "텍스처 및 셰이더 디자인",
-                "team.title": "우리 팀",
-                "team.founders": "창립자",
-                "team.admins": "관리자",
-                "team.mods": "운영자",
-                "team.developers": "개발자",
-                "team.members.ceo": "CEO & 창립자",
-                "team.members.ceo2": "CEO",
-                "team.members.ceo3": "CEO",
-                "team.members.admin1": "주요 관리자",
-                "team.members.admin2": "서버 관리자",
-                "team.members.admin3": "커뮤니티 관리자",
-                "team.members.mod1": "주요 운영자",
-                "team.members.dev1": "주요 개발자",
-                "team.members.dev2": "빌더",
-                "collaborators.title": "협력자",
-                "statistics.title": "우리의 통계",
-                "statistics.downloads": "클라이언트 다운로드",
-                "statistics.projects": "완료된 프로젝트",
-                "statistics.users": "활성 사용자",
-                "statistics.experience": "년 경험",
-                "contact.title": "메시지 보내기",
-                "contact.name": "이름",
-                "contact.email": "이메일",
-                "contact.message": "메시지",
-                "contact.send": "메시지 보내기",
-                "contact.info.title": "연락처 정보",
-                "contact.info.discord": "우리의 Discord에 참여하세요",
-                "contact.info.hours": "월요일부터 금요일까지, 9:00 - 18:00 (GMT)",
-                "inbox.title": "받은편지함",
-                "inbox.noMessages": "새 메시지가 없습니다.",
-                "inbox.clear": "모두 지우기",
-                "inbox.back": "← 양식으로 돌아가기",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. 모든 권리 보유."
-            }
-        };
-
-      
-        const languageNames = {
-            es: "Español",
-            en: "English",
-            fr: "Français",
-            de: "Deutsch",
-            it: "Italiano",
-            pt: "Português",
-            zh: "中文",
-            ja: "日本語",
-            ru: "Русский",
-            ar: "العربية",
-            hi: "हिन्दी",
-            ko: "한국어"
-        };
-
-        function changeLanguage(lang) {
-            
-            document.documentElement.lang = lang;
-            
-            const langBtn = document.getElementById('current-lang');
-            langBtn.textContent = languageNames[lang];
-            
-            document.querySelectorAll('.language-option').forEach(option => {
-                option.classList.remove('active');
-                if (option.dataset.lang === lang) {
-                    option.classList.add('active');
-                }
-            });
-            
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
-        
-            localStorage.setItem('preferredLanguage', lang);
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const languageBtn = document.getElementById('language-btn');
-            const languageDropdown = document.getElementById('language-dropdown');
-            const languageOptions = document.querySelectorAll('.language-option');
-            
-            const savedLanguage = localStorage.getItem('preferredLanguage') || 
-                                 (navigator.language.startsWith('es') ? 'es' : 'en');
-            changeLanguage(savedLanguage);
-            
-            languageBtn.addEventListener('click', function() {
-                languageDropdown.classList.toggle('active');
-            });
-            
-            document.addEventListener('click', function(event) {
-                if (!event.target.closest('.language-selector')) {
-                    languageDropdown.classList.remove('active');
-                }
-            });
-            
-            languageOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    const selectedLang = this.getAttribute('data-lang');
-                    changeLanguage(selectedLang);
-                    languageDropdown.classList.remove('active');
-                });
-            });
-        });
-
-        const menuToggle = document.getElementById('menu-toggle');
-        const leftNav = document.getElementById('left-nav');
-
-        menuToggle.addEventListener('click', () => {
-            leftNav.classList.toggle('nav-active');
-            
-            const icon = menuToggle.querySelector('i');
-            if (leftNav.classList.contains('nav-active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-
-        document.querySelectorAll('.left-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                leftNav.classList.remove('nav-active');
-                const icon = menuToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            });
-        });
-
-        const contactForm = document.querySelector('.contacto form');
-        const bandejaEntrada = document.getElementById('bandeja-entrada');
-        const messagesList = document.getElementById('messages-list');
-        const noMessagesDiv = document.getElementById('no-messages');
-        const clearBtn = document.getElementById('clear-btn');
-
-        function displayMessages() {
-            const messages = JSON.parse(localStorage.getItem('hexacore_messages')) || [];
-            messagesList.innerHTML = '';
-
-            if (messages.length === 0) {
-                noMessagesDiv.style.display = 'block';
-                clearBtn.style.display = 'none';
-            } else {
-                noMessagesDiv.style.display = 'none';
-                clearBtn.style.display = 'inline-block';
-                
-                messages.forEach(msg => {
-                    const li = document.createElement('li');
-                    li.className = 'message-item';
-                    
-                    li.innerHTML = `
-                        <div class="message-header">
-                            <div>
-                                <span class="message-author">${msg.name}</span>
-                                <span class="message-email">${msg.email}</span>
-                            </div>
-                            <span class="message-timestamp">${msg.timestamp}</span>
-                        </div>
-                        <div class="message-content">${msg.message}</div>
-                    `;
-                    
-                    messagesList.appendChild(li);
-                });
-            }
-        }
-
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            const newMessage = {
-                name: name,
-                email: email,
-                message: message,
-                timestamp: new Date().toLocaleString()
-            };
-            
-            let messages = JSON.parse(localStorage.getItem('hexacore_messages')) || [];
-            
-            messages.push(newMessage);
-            
-            localStorage.setItem('hexacore_messages', JSON.stringify(messages));
-            
-            contactForm.reset();
-            
-            const currentLang = localStorage.getItem('preferredLanguage') || 'es';
-            const successMessage = currentLang === 'en' ? 'Message sent successfully!' : 
-                                  currentLang === 'fr' ? 'Message envoyé avec succès!' :
-                                  currentLang === 'de' ? 'Nachricht erfolgreich gesendet!' :
-                                  currentLang === 'it' ? 'Messaggio inviato con successo!' :
-                                  currentLang === 'pt' ? 'Mensagem enviada com sucesso!' :
-                                  'Mensaje enviado con éxito!';
-            
-            const successDiv = document.createElement('div');
-            successDiv.style.cssText = `
-                position: fixed;
-                top: 100px;
-                right: 20px;
-                background-color: var(--accent-color);
-                color: white;
-                padding: 15px 20px;
-                border-radius: 5px;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-                z-index: 1000;
-                animation: slideIn 0.3s ease-out;
-            `;
-            successDiv.textContent = successMessage;
-            
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes slideIn {
-                    from { transform: translateX(100%); opacity: 0; }
-                    to { transform: translateX(0); opacity: 1; }
-                }
-            `;
-            document.head.appendChild(style);
-            
-            document.body.appendChild(successDiv);
-            
-            setTimeout(() => {
-                successDiv.style.animation = 'slideIn 0.3s ease-out reverse';
-                setTimeout(() => {
-                    document.body.removeChild(successDiv);
-                }, 300);
-            }, 3000);
-        });
-
-        clearBtn.addEventListener('click', function() {
-            if (confirm('¿Estás seguro de que quieres borrar todos los mensajes?')) {
-                localStorage.removeItem('hexacore_messages');
-                displayMessages();
-            }
-        });
-
-        document.querySelector('.back-link').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('bandeja-entrada').classList.remove('visible');
-            window.location.hash = '#contact';
-        });
-
-        displayMessages();
-    </script>
-</body>
-</html>
+                "n
