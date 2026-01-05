@@ -1508,7 +1508,7 @@
             }
         };
 
-        // Nombres de idiomas para mostrar en el selector
+      
         const languageNames = {
             es: "Español",
             en: "English",
@@ -1524,16 +1524,13 @@
             ko: "한국어"
         };
 
-        // Función para cambiar el idioma
         function changeLanguage(lang) {
-            // Actualizar el idioma en el atributo html
+            
             document.documentElement.lang = lang;
             
-            // Actualizar el texto del botón de idioma
             const langBtn = document.getElementById('current-lang');
             langBtn.textContent = languageNames[lang];
             
-            // Actualizar las clases activas en las opciones
             document.querySelectorAll('.language-option').forEach(option => {
                 option.classList.remove('active');
                 if (option.dataset.lang === lang) {
@@ -1541,42 +1538,35 @@
                 }
             });
             
-            // Actualizar todos los elementos con el atributo data-i18n
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 if (translations[lang] && translations[lang][key]) {
                     element.textContent = translations[lang][key];
                 }
             });
-            
-            // Guardar la preferencia de idioma en localStorage
+        
             localStorage.setItem('preferredLanguage', lang);
         }
 
-        // Configurar el selector de idioma
         document.addEventListener('DOMContentLoaded', function() {
             const languageBtn = document.getElementById('language-btn');
             const languageDropdown = document.getElementById('language-dropdown');
             const languageOptions = document.querySelectorAll('.language-option');
             
-            // Cargar el idioma guardado o usar el idioma del navegador
             const savedLanguage = localStorage.getItem('preferredLanguage') || 
                                  (navigator.language.startsWith('es') ? 'es' : 'en');
             changeLanguage(savedLanguage);
             
-            // Alternar el menú desplegable
             languageBtn.addEventListener('click', function() {
                 languageDropdown.classList.toggle('active');
             });
             
-            // Cerrar el menú al hacer clic fuera
             document.addEventListener('click', function(event) {
                 if (!event.target.closest('.language-selector')) {
                     languageDropdown.classList.remove('active');
                 }
             });
             
-            // Cambiar idioma al seleccionar una opción
             languageOptions.forEach(option => {
                 option.addEventListener('click', function() {
                     const selectedLang = this.getAttribute('data-lang');
@@ -1636,3 +1626,96 @@
                         <div class="message-header">
                             <div>
                                 <span class="message-author">${msg.name}</span>
+                                <span class="message-email">${msg.email}</span>
+                            </div>
+                            <span class="message-timestamp">${msg.timestamp}</span>
+                        </div>
+                        <div class="message-content">${msg.message}</div>
+                    `;
+                    
+                    messagesList.appendChild(li);
+                });
+            }
+        }
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            const newMessage = {
+                name: name,
+                email: email,
+                message: message,
+                timestamp: new Date().toLocaleString()
+            };
+            
+            let messages = JSON.parse(localStorage.getItem('hexacore_messages')) || [];
+            
+            messages.push(newMessage);
+            
+            localStorage.setItem('hexacore_messages', JSON.stringify(messages));
+            
+            contactForm.reset();
+            
+            const currentLang = localStorage.getItem('preferredLanguage') || 'es';
+            const successMessage = currentLang === 'en' ? 'Message sent successfully!' : 
+                                  currentLang === 'fr' ? 'Message envoyé avec succès!' :
+                                  currentLang === 'de' ? 'Nachricht erfolgreich gesendet!' :
+                                  currentLang === 'it' ? 'Messaggio inviato con successo!' :
+                                  currentLang === 'pt' ? 'Mensagem enviada com sucesso!' :
+                                  'Mensaje enviado con éxito!';
+            
+            const successDiv = document.createElement('div');
+            successDiv.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background-color: var(--accent-color);
+                color: white;
+                padding: 15px 20px;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                z-index: 1000;
+                animation: slideIn 0.3s ease-out;
+            `;
+            successDiv.textContent = successMessage;
+            
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            document.body.appendChild(successDiv);
+            
+            setTimeout(() => {
+                successDiv.style.animation = 'slideIn 0.3s ease-out reverse';
+                setTimeout(() => {
+                    document.body.removeChild(successDiv);
+                }, 300);
+            }, 3000);
+        });
+
+        clearBtn.addEventListener('click', function() {
+            if (confirm('¿Estás seguro de que quieres borrar todos los mensajes?')) {
+                localStorage.removeItem('hexacore_messages');
+                displayMessages();
+            }
+        });
+
+        document.querySelector('.back-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('bandeja-entrada').classList.remove('visible');
+            window.location.hash = '#contact';
+        });
+
+        displayMessages();
+    </script>
+</body>
+</html>
