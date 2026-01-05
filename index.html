@@ -495,14 +495,14 @@
             font-size: 0.9rem;
         }
 
-        /* --- ESTILOS PARA LA BANDEJA DE ENTRADA --- */
+        
         #bandeja-entrada {
-            display: none; /* Oculto por defecto */
+            display: none;
             padding: 100px 0;
             background-color: var(--surface-color);
         }
         #bandeja-entrada.visible {
-            display: block; /* Se muestra cuando se activa */
+            display: block;
         }
         .bandeja-container {
             max-width: 900px;
@@ -596,7 +596,7 @@
             text-decoration: underline;
         }
 
-        /* --- ESTILOS PARA LA PÁGINA DE MANTENIMIENTO --- */
+        
         .maintenance-overlay {
             position: fixed;
             top: 0;
@@ -737,7 +737,6 @@
     </style>
 </head>
 <body>
-    <!-- Overlay de mantenimiento -->
     <div class="maintenance-overlay" id="maintenanceOverlay">
         <i class="fas fa-tools maintenance-icon"></i>
         <h1 class="maintenance-title" data-i18n="maintenance.title">Sitio en Mantenimiento</h1>
@@ -753,7 +752,7 @@
             <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
             <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
-        <p class="maintenance-hint">Presiona Ctrl+U para desactivar el modo mantenimiento</p>
+        <p class="maintenance-hint">Presiona Alt+U para desactivar el modo mantenimiento</p>
     </div>
 
     <header class="main-header">
@@ -769,7 +768,6 @@
             </div>
 
             <div class="header-actions">
-                <!-- Selector de idioma -->
                 <div class="language-selector">
                     <button class="language-btn" id="language-btn">
                         <span id="current-lang">Español</span>
@@ -933,7 +931,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -1025,7 +1022,7 @@
     </footer>
 
     <script>
-        // Sistema de traducción
+        
         const translations = {
             es: {
                 "nav.minecraft": "Minecraft",
@@ -1074,11 +1071,7 @@
                 "inbox.noMessages": "No hay mensajes nuevos.",
                 "inbox.clear": "Borrar Todos",
                 "inbox.back": "← Volver al formulario",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. Todos los derechos reservados.",
-                "maintenance.title": "Sitio en Mantenimiento",
-                "maintenance.message": "Estamos trabajando para mejorar tu experiencia. Volveremos pronto con nuevas características y mejoras.",
-                "maintenance.time": "Tiempo estimado: 2 horas",
-                "maintenance.contact": "Para consultas urgentes, contáctanos en:"
+                "footer.copyright": "&copy; 2024 Hexa college Studios. Todos los derechos reservados."
             },
             en: {
                 "nav.minecraft": "Minecraft",
@@ -1127,11 +1120,7 @@
                 "inbox.noMessages": "No new messages.",
                 "inbox.clear": "Clear All",
                 "inbox.back": "← Back to form",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. All rights reserved.",
-                "maintenance.title": "Site Under Maintenance",
-                "maintenance.message": "We are working to improve your experience. We'll be back soon with new features and improvements.",
-                "maintenance.time": "Estimated time: 2 hours",
-                "maintenance.contact": "For urgent inquiries, contact us at:"
+                "footer.copyright": "&copy; 2024 HexaCore Studios. All rights reserved."
             },
             fr: {
                 "nav.minecraft": "Minecraft",
@@ -1154,12 +1143,61 @@
                 "team.mods": "Modérateurs",
                 "team.developers": "Développeurs",
                 "team.members.ceo": "PDG & Fondateur",
-                "team.members.ceo2": "PDG",
+                "team.members.ceo2": "PDG & Fondateur",
                 "team.members.ceo3": "PDG",
                 "team.members.admin1": "Administrateur Principal",
                 "team.members.admin2": "Administrateur de Serveur",
                 "team.members.admin3": "Administrateur de Communauté",
-                "team.members.mod1": "Modérateur Principal",
+                "team.members.mod1": "Mod Principal",
+                "team.members.dev1": "Développeur Principal",
+                "team.members.dev2": "Builder",
+                "collaborators.title": "Collaborateurs",
+                "statistics.title": "Nos Statistiques",
+                "statistics.downloads": "Téléchargements du Client",
+                "statistics.projects": "Projets Terminés",
+                "statistics.users": "Utilisateurs Actifs",
+                "statistics.experience": "Années d'Expérience",
+                "contact.title": "Envoyez un mensaje",
+                "contact.name": "Nom",
+                "contact.email": "Email",
+                "contact.message": "Message",
+                "contact.send": "Envoyer Mensaje",
+                "contact.info.title": "Informations de Contact",
+                "contact.info.discord": "Rejoignez à notre Discord",
+                "contact.info.hours": "Lundi à Vendredi, 9:00 - 18:00 (GMT)",
+                "inbox.title": "Boîte de Réception",
+                "inbox.noMessages": "Aucun nouveau message.",
+                "inbox.clear": "Tout Supprimer",
+                "inbox.back": "← Retour au formulaire",
+                "footer.copyright": "&copy; 2024 HexaCore Studios. Tous droits réservés."
+            },
+            de: {
+                "nav.minecraft": "Minecraft",
+                "nav.team": "Équipe",
+                "nav.collaborators": "Collaborateurs",
+                "nav.statistics": "Statistiques",
+                "nav.contact": "Contact",
+                "nav.download": "Télécharger HexaCore Client",
+                "hero.tagline1": "Nous transformons vos idées",
+                "hero.tagline2": "En Expériences Inoubliables.",
+                "hero.description": "Nous sommes un studio de développement spécialisé dans la création d'expériences uniques. Avec plus de 5 ans d'expérience, nous concevons et organisons des serveurs, des événements et des projets de toutes tailles, garantissant innovation et qualité dans chacun.",
+                "minecraft.title": "Équipe Minecraft",
+                "minecraft.description": "Avec plus de 5 ans dans l'industrie, nous maîtrisons l'art de créer des mondes et des expériences uniques dans Minecraft. Des serveurs personnalisés aux cartes épiques, votre vision est notre prochain projet.",
+                "minecraft.services.maps": "Création de Cartes et Mondes",
+                "minecraft.services.plugins": "Développement de Plugins",
+                "minecraft.services.textures": "Design de Textures et Shaders",
+                "team.title": "Notre Équipe",
+                "team.founders": "Fondateurs",
+                "team.admins": "Administrateurs",
+                "team.mods": "Modérateurs",
+                "team.developers": "Développeurs",
+                "team.members.ceo": "PDG & Fondateur",
+                "team.members.ceo2": "PDG & Fondateur",
+                "team.members.ceo3": "PDG",
+                "team.members.admin1": "Administrateur Principal",
+                "team.members.admin2": "Administrateur de Serveur",
+                "team.members.admin3": "Administrateur de Communauté",
+                "team.members.mod1": "Mod Principal",
                 "team.members.dev1": "Développeur Principal",
                 "team.members.dev2": "Builder",
                 "collaborators.title": "Collaborateurs",
@@ -1172,446 +1210,385 @@
                 "contact.name": "Nom",
                 "contact.email": "Email",
                 "contact.message": "Message",
-                "contact.send": "Envoyer le Message",
-                "contact.info.title": "Informations de Contact",
-                "contact.info.discord": "Rejoignez notre Discord",
+                "contact.send": "Envoyer Mensaje",
+                "contact.info.title": "Informations de Contacto",
+                "contact.info.discord": "Rejoignez à notre Discord",
                 "contact.info.hours": "Lundi à Vendredi, 9:00 - 18:00 (GMT)",
                 "inbox.title": "Boîte de Réception",
                 "inbox.noMessages": "Aucun nouveau message.",
                 "inbox.clear": "Tout Supprimer",
                 "inbox.back": "← Retour au formulaire",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. Tous droits réservés.",
-                "maintenance.title": "Site en Maintenance",
-                "maintenance.message": "Nous travaillons à améliorer votre expérience. Nous serons de retour bientôt avec de nouvelles fonctionnalités et améliorations.",
-                "maintenance.time": "Durée estimée : 2 heures",
-                "maintenance.contact": "Pour les demandes urgentes, contactez-nous à :"
-            },
-            de: {
-                "nav.minecraft": "Minecraft",
-                "nav.team": "Team",
-                "nav.collaborators": "Mitarbeiter",
-                "nav.statistics": "Statistiken",
-                "nav.contact": "Kontakt",
-                "nav.download": "HexaCore Client herunterladen",
-                "hero.tagline1": "Wir verwandeln Ihre Ideen",
-                "hero.tagline2": "In unvergessliche Erlebnisse.",
-                "hero.description": "Wir sind ein Entwicklungsstudio, das auf die Schaffung einzigartiger Erlebnisse spezialisiert ist. Mit über 5 Jahren Erfahrung entwerfen und organisieren wir Server, Events und Projekte jeder Größenordnung und gewährleisten Innovation und Qualität in jedem einzelnen.",
-                "minecraft.title": "Minecraft Team",
-                "minecraft.description": "Mit über 5 Jahren Erfahrung in der Branche beherrschen wir die Kunst, Welten und einzigartige Erlebnisse in Minecraft zu schaffen. Von maßgeschneiderten Servern bis hin zu epischen Karten ist Ihre Vision unser nächstes Projekt.",
-                "minecraft.services.maps": "Karten- und Weltenerschaffung",
-                "minecraft.services.plugins": "Plugin-Entwicklung",
-                "minecraft.services.textures": "Texturen- und Shader-Design",
-                "team.title": "Unser Team",
-                "team.founders": "Gründer",
-                "team.admins": "Administratoren",
-                "team.mods": "Moderatoren",
-                "team.developers": "Entwickler",
-                "team.members.ceo": "CEO & Gründer",
-                "team.members.ceo2": "CEO",
-                "team.members.ceo3": "CEO",
-                "team.members.admin1": "Hauptadministrator",
-                "team.members.admin2": "Serveradministrator",
-                "team.members.admin3": "Community-Administrator",
-                "team.members.mod1": "Hauptmoderator",
-                "team.members.dev1": "Hauptentwickler",
-                "team.members.dev2": "Builder",
-                "collaborators.title": "Mitarbeiter",
-                "statistics.title": "Unsere Statistiken",
-                "statistics.downloads": "Client-Downloads",
-                "statistics.projects": "Abgeschlossene Projekte",
-                "statistics.users": "Aktive Benutzer",
-                "statistics.experience": "Jahre Erfahrung",
-                "contact.title": "Senden Sie uns eine Nachricht",
-                "contact.name": "Name",
-                "contact.email": "E-Mail",
-                "contact.message": "Nachricht",
-                "contact.send": "Nachricht senden",
-                "contact.info.title": "Kontaktinformationen",
-                "contact.info.discord": "Treten Sie unserem Discord bei",
-                "contact.info.hours": "Montag bis Freitag, 9:00 - 18:00 (GMT)",
-                "inbox.title": "Posteingang",
-                "inbox.noMessages": "Keine neuen Nachrichten.",
-                "inbox.clear": "Alle löschen",
-                "inbox.back": "← Zurück zum Formular",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. Alle Rechte vorbehalten.",
-                "maintenance.title": "Seite in Wartung",
-                "maintenance.message": "Wir arbeiten daran, Ihr Erlebnis zu verbessern. Wir werden bald mit neuen Funktionen und Verbesserungen zurück sein.",
-                "maintenance.time": "Geschätzte Zeit: 2 Stunden",
-                "maintenance.contact": "Für dringende Anfragen kontaktieren Sie uns unter:"
+                "footer.copyright": "&copy; 2024 HexaCore Studios. Tous droits réservés."
             },
             it: {
                 "nav.minecraft": "Minecraft",
                 "nav.team": "Team",
-                "nav.collaborators": "Collaboratori",
-                "nav.statistics": "Statistiche",
-                "nav.contact": "Contatto",
-                "nav.download": "Scarica HexaCore Client",
-                "hero.tagline1": "Trasformiamo le tue idee",
-                "hero.tagline2": "In Esperienze Indimenticabili.",
-                "hero.description": "Siamo uno studio di sviluppo specializzato nella creazione di esperienze uniche. Con oltre 5 anni di esperienza, progettiamo e organizziamo server, eventi e progetti di tutte le dimensioni, garantendo innovazione e qualità in ciascuno.",
-                "minecraft.title": "Team Minecraft",
-                "minecraft.description": "Con oltre 5 anni di esperienza nel settore, padroneggiamo l'arte di creare mondi ed esperienze uniche all'interno di Minecraft. Da server personalizzati a mappe epiche, la tua visione è il nostro prossimo progetto.",
-                "minecraft.services.maps": "Creazione di Mappe e Mondi",
-                "minecraft.services.plugins": "Sviluppo Plugin",
-                "minecraft.services.textures": "Design di Texture e Shader",
-                "team.title": "Il Nostro Team",
-                "team.founders": "Fondatori",
-                "team.admins": "Amministratori",
-                "team.mods": "Moderatori",
-                "team.developers": "Sviluppatori",
-                "team.members.ceo": "CEO & Fondatore",
+                "nav.collaborators": "Collaborators",
+                "nav.statistics": "Statistics",
+                "nav.contact": "Contact",
+                "nav.download": "Download HexaCore Client",
+                "hero.tagline1": "Trasformiamo tus ideas",
+                "hero.tagline2": "En Experiencias Inolvidables.",
+                "hero.description": "Somos un estudio de desarrollo especializado en crear experiencias únicas. Con más de 5 años de experiencia, diseñamos y organizamos servidores, eventos y proyectos de todas las escalas, garantizando innovación y calidad en cada uno.",
+                "minecraft.title": "Minecraft Team",
+                "minecraft.description": "Con más de 5 años en la industria, dominamos el arte de crear mundos y experiencias únicas dentro de Minecraft. Desde servidores personalizados hasta mapas épicos, tu visión es nuestro próximo proyecto.",
+                "minecraft.services.maps": "Map and World Creation",
+                "minecraft.services.plugins": "Plugin Development",
+                "minecraft.services.textures": "Texture and Shader Design",
+                "team.title": "Our Team",
+                "team.founders": "Founders",
+                "team.admins": "Admins",
+                "team.mods": "Mods",
+                "team.developers": "Developers",
+                "team.members.ceo": "CEO & Founder",
                 "team.members.ceo2": "CEO",
                 "team.members.ceo3": "CEO",
-                "team.members.admin1": "Amministratore Principale",
-                "team.members.admin2": "Amministratore di Server",
-                "team.members.admin3": "Amministratore di Comunità",
-                "team.members.mod1": "Moderatore Principale",
-                "team.members.dev1": "Sviluppatore Principale",
+                "team.members.admin1": "Main Administrator",
+                "team.members.admin2": "Server Administrator",
+                "team.members.admin3": "Community Administrator",
+                "team.members.mod1": "Main Mod",
+                "team.members.dev1": "Main Developer",
                 "team.members.dev2": "Builder",
-                "collaborators.title": "Collaboratori",
-                "statistics.title": "Le Nostre Statistiche",
-                "statistics.downloads": "Download del Client",
-                "statistics.projects": "Progetti Completati",
-                "statistics.users": "Utenti Attivi",
-                "statistics.experience": "Anni di Esperienza",
-                "contact.title": "Inviaci un messaggio",
-                "contact.name": "Nome",
+                "collaborators.title": "Collaborators",
+                "statistics.title": "Our Statistics",
+                "statistics.downloads": "Client Downloads",
+                "statistics.projects": "Completed Projects",
+                "statistics.users": "Active Users",
+                "statistics.experience": "Years of Experience",
+                "contact.title": "Send us a message",
+                "contact.name": "Name",
                 "contact.email": "Email",
-                "contact.message": "Messaggio",
-                "contact.send": "Invia Messaggio",
-                "contact.info.title": "Informazioni di Contatto",
-                "contact.info.discord": "Unisciti al nostro Discord",
-                "contact.info.hours": "Lunedì a Venerdì, 9:00 - 18:00 (GMT)",
-                "inbox.title": "Posta in Arrivo",
-                "inbox.noMessages": "Nessun nuovo messaggio.",
-                "inbox.clear": "Cancella Tutto",
-                "inbox.back": "← Torna al modulo",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. Tutti i diritti riservati.",
-                "maintenance.title": "Sito in Manutenzione",
-                "maintenance.message": "Stiamo lavorando per migliorare la tua esperienza. Torneremo presto con nuove funzionalità e miglioramenti.",
-                "maintenance.time": "Tempo stimato: 2 ore",
-                "maintenance.contact": "Per richieste urgenti, contattaci a:"
-            },
-            pt: {
-                "nav.minecraft": "Minecraft",
-                "nav.team": "Equipe",
-                "nav.collaborators": "Colaboradores",
-                "nav.statistics": "Estatísticas",
-                "nav.contact": "Contato",
-                "nav.download": "Baixar HexaCore Client",
-                "hero.tagline1": "Transformamos suas ideias",
-                "hero.tagline2": "Em Experiências Inesquecíveis.",
-                "hero.description": "Somos um estúdio de desenvolvimento especializado na criação de experiências únicas. Com mais de 5 anos de experiência, projetamos e organizamos servidores, eventos e projetos de todas as escalas, garantizando inovação e qualidade em cada um.",
-                "minecraft.title": "Equipe Minecraft",
-                "minecraft.description": "Com mais de 5 anos na indústria, dominamos a arte de criar mundos e experiências únicas dentro do Minecraft. De servidores personalizados a mapas épicos, sua visão é nosso próximo projeto.",
-                "minecraft.services.maps": "Criação de Mapas e Mundos",
-                "minecraft.services.plugins": "Desenvolvimento de Plugins",
-                "minecraft.services.textures": "Design de Texturas e Shaders",
-                "team.title": "Nossa Equipe",
-                "team.founders": "Fundadores",
-                "team.admins": "Administradores",
-                "team.mods": "Moderadores",
-                "team.developers": "Desenvolvedores",
-                "team.members.ceo": "CEO & Fundador",
-                "team.members.ceo2": "CEO",
-                "team.members.ceo3": "CEO",
-                "team.members.admin1": "Administrador Principal",
-                "team.members.admin2": "Administrador de Servidor",
-                "team.members.admin3": "Administrador de Comunidade",
-                "team.members.mod1": "Moderador Principal",
-                "team.members.dev1": "Desenvolvedor Principal",
-                "team.members.dev2": "Builder",
-                "collaborators.title": "Colaboradores",
-                "statistics.title": "Nossas Estatísticas",
-                "statistics.downloads": "Downloads do Cliente",
-                "statistics.projects": "Projetos Concluídos",
-                "statistics.users": "Usuários Ativos",
-                "statistics.experience": "Anos de Experiência",
-                "contact.title": "Envie-nos uma mensagem",
-                "contact.name": "Nome",
-                "contact.email": "Email",
-                "contact.message": "Mensagem",
-                "contact.send": "Enviar Mensagem",
-                "contact.info.title": "Informações de Contato",
-                "contact.info.discord": "Junte-se ao nosso Discord",
-                "contact.info.hours": "Segunda a Sexta, 9:00 - 18:00 (GMT)",
-                "inbox.title": "Caixa de Entrada",
-                "inbox.noMessages": "Nenhuma mensagem nova.",
-                "inbox.clear": "Limpar Tudo",
-                "inbox.back": "← Voltar ao formulário",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. Todos os direitos reservados.",
-                "maintenance.title": "Site em Manutenção",
-                "maintenance.message": "Estamos trabalhando para melhorar sua experiência. Voltaremos em breve com novos recursos e melhorias.",
-                "maintenance.time": "Tempo estimado: 2 horas",
-                "maintenance.contact": "Para consultas urgentes, entre em contato conosco em:"
-            },
-            zh: {
-                "nav.minecraft": "Minecraft",
-                "nav.team": "团队",
-                "nav.collaborators": "合作者",
-                "nav.statistics": "统计数据",
-                "nav.contact": "联系我们",
-                "nav.download": "下载 HexaCore 客户端",
-                "hero.tagline1": "我们将您的想法",
-                "hero.tagline2": "转化为难忘的体验。",
-                "hero.description": "我们是一家专注于创造独特体验的开发工作室。拥有超过5年的经验，我们设计和组织各种规模的服务器、活动和项目，确保每一个都充满创新和质量。",
-                "minecraft.title": "Minecraft 团队",
-                "minecraft.description": "凭借在行业中的5年多经验，我们精通在Minecraft中创造世界和独特体验的艺术。从定制服务器到史诗地图，您的愿景是我们的下一个项目。",
-                "minecraft.services.maps": "地图和世界创建",
-                "minecraft.services.plugins": "插件开发",
-                "minecraft.services.textures": "纹理和着色器设计",
-                "team.title": "我们的团队",
-                "team.founders": "创始人",
-                "team.admins": "管理员",
-                "team.mods": "版主",
-                "team.developers": "开发者",
-                "team.members.ceo": "CEO & 创始人",
-                "team.members.ceo2": "CEO",
-                "team.members.ceo3": "CEO",
-                "team.members.admin1": "主要管理员",
-                "team.members.admin2": "服务器管理员",
-                "team.members.admin3": "社区管理员",
-                "team.members.mod1": "主要版主",
-                "team.members.dev1": "主要开发者",
-                "team.members.dev2": "建造者",
-                "collaborators.title": "合作者",
-                "statistics.title": "我们的统计数据",
-                "statistics.downloads": "客户端下载量",
-                "statistics.projects": "已完成项目",
-                "statistics.users": "活跃用户",
-                "statistics.experience": "年经验",
-                "contact.title": "给我们发送消息",
-                "contact.name": "姓名",
-                "contact.email": "电子邮件",
-                "contact.message": "消息",
-                "contact.send": "发送消息",
-                "contact.info.title": "联系信息",
-                "contact.info.discord": "加入我们的 Discord",
-                "contact.info.hours": "周一至周五，9:00 - 18:00 (GMT)",
-                "inbox.title": "收件箱",
-                "inbox.noMessages": "没有新消息。",
-                "inbox.clear": "清除全部",
-                "inbox.back": "← 返回表单",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. 保留所有权利。",
-                "maintenance.title": "网站维护中",
-                "maintenance.message": "我们正在努力改善您的体验。我们将很快带着新功能和新改进回来。",
-                "maintenance.time": "预计时间：2小时",
-                "maintenance.contact": "紧急咨询请联系："
-            },
-            ja: {
-                "nav.minecraft": "Minecraft",
-                "nav.team": "チーム",
-                "nav.collaborators": "協力者",
-                "nav.statistics": "統計",
-                "nav.contact": "連絡先",
-                "nav.download": "HexaCoreクライアントをダウンロード",
-                "hero.tagline1": "あなたのアイデアを",
-                "hero.tagline2": "忘れられない体験に変えます。",
-                "hero.description": "私たちはユニークな体験の作成に特化した開発スタジオです。5年以上の経験を持つ私たちは、あらゆる規模のサーバー、イベント、プロジェクトを設計・組織し、それぞれに革新と品質を保証します。",
-                "minecraft.title": "Minecraftチーム",
-                "minecraft.description": "業界での5年以上の経験を持つ私たちは、Minecraft内で世界とユニークな体験を作成する技術をマスターしています。カスタムサーバーから壮大なマップまで、あなたのビジョンが私たちの次のプロジェクトです。",
-                "minecraft.services.maps": "マップと世界の作成",
-                "minecraft.services.plugins": "プラグイン開発",
-                "minecraft.services.textures": "テクスチャとシェーダーのデザイン",
-                "team.title": "私たちのチーム",
-                "team.founders": "創設者",
-                "team.admins": "管理者",
-                "team.mods": "モデレーター",
-                "team.developers": "開発者",
-                "team.members.ceo": "CEO & 創設者",
-                "team.members.ceo2": "CEO",
-                "team.members.ceo3": "CEO",
-                "team.members.admin1": "主任管理者",
-                "team.members.admin2": "サーバー管理者",
-                "team.members.admin3": "コミュニティ管理者",
-                "team.members.mod1": "主任モデレーター",
-                "team.members.dev1": "主任開発者",
-                "team.members.dev2": "ビルダー",
-                "collaborators.title": "協力者",
-                "statistics.title": "私たちの統計",
-                "statistics.downloads": "クライアントダウンロード数",
-                "statistics.projects": "完了プロジェクト",
-                "statistics.users": "アクティブユーザー",
-                "statistics.experience": "年の経験",
-                "contact.title": "メッセージを送る",
-                "contact.name": "名前",
-                "contact.email": "メール",
-                "contact.message": "メッセージ",
-                "contact.send": "メッセージを送信",
-                "contact.info.title": "連絡先情報",
-                "contact.info.discord": "私たちのDiscordに参加",
-                "contact.info.hours": "月曜日から金曜日、9:00 - 18:00 (GMT)",
-                "inbox.title": "受信トレイ",
-                "inbox.noMessages": "新しいメッセージはありません。",
-                "inbox.clear": "すべてクリア",
-                "inbox.back": "← フォームに戻る",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. 全著作権所有。",
-                "maintenance.title": "サイトメンテナンス中",
-                "maintenance.message": "あなたの体験を向上させるために努力しています。新機能と改善を加えてすぐに戻ります。",
-                "maintenance.time": "推定時間：2時間",
-                "maintenance.contact": "緊�急のお問い合わせはこちらまで："
-            },
-            ru: {
-                "nav.minecraft": "Minecraft",
-                "nav.team": "Команда",
-                "nav.collaborators": "Сотрудники",
-                "nav.statistics": "Статистика",
-                "nav.contact": "Контакт",
-                "nav.download": "Скачать HexaCore Клиент",
-                "hero.tagline1": "Мы превращаем ваши идеи",
-                "hero.tagline2": "В незабываемые впечатления.",
-                "hero.description": "Мы - студия разработки, специализирующаяся на создании уникальных впечатлений. С более чем 5-летним опытом мы проектируем и организуем серверы, события и проекты всех масштабов, гарантируя инновации и качество в каждом.",
-                "minecraft.title": "Команда Minecraft",
-                "minecraft.description": "С более чем 5-летним опытом в индустрии, мы владеем искусством создания миров и уникальных впечатлений внутри Minecraft. От кастомных серверов до эпических карт, ваше видение - наш следующий проект.",
-                "minecraft.services.maps": "Создание карт и миров",
-                "minecraft.services.plugins": "Разработка плагинов",
-                "minecraft.services.textures": "Дизайн текстур и шейдеров",
-                "team.title": "Наша команда",
-                "team.founders": "Основатели",
-                "team.admins": "Администраторы",
-                "team.mods": "Модераторы",
-                "team.developers": "Разработчики",
-                "team.members.ceo": "CEO & Основатель",
-                "team.members.ceo2": "CEO",
-                "team.members.ceo3": "CEO",
-                "team.members.admin1": "Главный администратор",
-                "team.members.admin2": "Администратор сервера",
-                "team.members.admin3": "Администратор сообщества",
-                "team.members.mod1": "Главный модератор",
-                "team.members.dev1": "Главный разработчик",
-                "team.members.dev2": "Билдер",
-                "collaborators.title": "Сотрудники",
-                "statistics.title": "Наша статистика",
-                "statistics.downloads": "Загрузки клиента",
-                "statistics.projects": "Завершенные проекты",
-                "statistics.users": "Активные пользователи",
-                "statistics.experience": "Лет опыта",
-                "contact.title": "Отправьте нам сообщение",
-                "contact.name": "Имя",
-                "contact.email": "Электронная почта",
-                "contact.message": "Сообщение",
-                "contact.send": "Отправить сообщение",
-                "contact.info.title": "Контактная информация",
-                "contact.info.discord": "Присоединяйтесь к нашему Discord",
-                "contact.info.hours": "Понедельник по Пятницу, 9:00 - 18:00 (GMT)",
-                "inbox.title": "Входящие",
-                "inbox.noMessages": "Нет новых сообщений.",
-                "inbox.clear": "Очистить все",
-                "inbox.back": "← Вернуться к форме",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. Все права защищены.",
-                "maintenance.title": "Сайт на Обслуживании",
-                "maintenance.message": "Мы работаем над улучшением вашего опыта. Скоро вернемся с новыми функциями и улучшениями.",
-                "maintenance.time": "Примерное время: 2 часа",
-                "maintenance.contact": "Для срочных вопросов, свяжитесь с нами по адресу:"
-            },
-            ar: {
-                "nav.minecraft": "Minecraft",
-                "nav.team": "الفريق",
-                "nav.collaborators": "المتعاونون",
-                "nav.statistics": "الإحصائيات",
-                "nav.contact": "اتصل",
-                "nav.download": "تحميل عميل HexaCore",
-                "hero.tagline1": "نحول أفكارك",
-                "hero.tagline2": "إلى تجارب لا تُنسى.",
-                "hero.description": "نحن استوديو تطوير متخصص في خلق تجارب فريدة. مع أكثر من 5 سنوات من الخبرة، نصمم وننظم الخوادم والأحداث والمشاريع بجميع المقاسات، ونضمن الابتكار والجودة في كل واحد.",
-                "minecraft.title": "فريق Minecraft",
-                "minecraft.description": "مع أكثر من 5 سنوات في الصناعة، نتقن فن إنشاء عوالم وتجارب فريدة داخل Minecraft. من الخوادم المخصصة إلى الخرائط الملحمية، رؤيتك هي مشروعنا التالي.",
-                "minecraft.services.maps": "إنشاء الخرائط والعوالم",
-                "minecraft.services.plugins": "تطوير الإضافات",
-                "minecraft.services.textures": "تصميم النسيج والظلال",
-                "team.title": "فريقنا",
-                "team.founders": "المؤسسون",
-                "team.admins": "المسؤولون",
-                "team.mods": "المشرفون",
-                "team.developers": "المطورون",
-                "team.members.ceo": "CEO & المؤسس",
-                "team.members.ceo2": "CEO",
-                "team.members.ceo3": "CEO",
-                "team.members.admin1": "المسؤول الرئيسي",
-                "team.members.admin2": "مسؤول الخادم",
-                "team.members.admin3": "مسؤول المجتمع",
-                "team.members.mod1": "المشرف الرئيسي",
-                "team.members.dev1": "المطور الرئيسي",
-                "team.members.dev2": "البناء",
-                "collaborators.title": "المتعاونون",
-                "statistics.title": "إحصائياتنا",
-                "statistics.downloads": "تنزيلات العميل",
-                "statistics.projects": "المشاريع المكتملة",
-                "statistics.users": "المستخدمون النشطون",
-                "statistics.experience": "سنوات الخبرة",
-                "contact.title": "أرسل لنا رسالة",
-                "contact.name": "الاسم",
-                "contact.email": "البريد الإلكتروني",
-                "contact.message": "الرسالة",
-                "contact.send": "إرسال الرسالة",
-                "contact.info.title": "معلومات الاتصال",
-                "contact.info.discord": "انضم إلى Discord الخاص بنا",
-                "contact.info.hours": "الإثنين إلى الجمعة، 9:00 - 18:00 (GMT)",
-                "inbox.title": "صندوق الوارد",
-                "inbox.noMessages": "لا توجد رسائل جديدة.",
-                "inbox.clear": "مسح الكل",
-                "inbox.back": "← العودة إلى النموذج",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. جميع الحقوق محفوظة.",
-                "maintenance.title": "الموقع تحت الصيانة",
-                "maintenance.message": "نعمل على تحسين تجربتك. سنعود قريباً بميزات وتحسينات جديدة.",
-                "maintenance.time": "الوقت المقدر: 2 ساعات",
-                "maintenance.contact": "للاستفسارات العاجلة، تواصل معنا عبر:"
-            },
-            hi: {
-                "nav.minecraft": "Minecraft",
-                "nav.team": "टीम",
-                "nav.collaborators": "सहयोगी",
-                "nav.statistics": "आँकड़े",
-                "nav.contact": "संपर्क",
-                "nav.download": "HexaCore क्लाइंट डाउनलोड करें",
-                "hero.tagline1": "हम आपके विचारों को बदलते हैं",
-                "hero.tagline2": "अविस्मरणीय अनुभवों में।",
-                "hero.description": "हम अद्वितीय अनुभव अनुभवों में विशेषज सभी पैमानों पर सर्वर, सभी पैमानों पर सर्वर, सभी पैमानों पर आयोजगुनित और गुणवतालिए।।",
-                "minecraft.title": "Minecraft टीम",
-                "minecraft.description": "उद्योग में 5 साल से साथ, हम Minecraft के भीतर अनुभवों की कला माहिर ह।। अनुकूलिए तक विशेष ज देख सभी पैमानों के दृषा प्रोजेक्ट महाकाव विजनया।।",
-                "minecraft.services.maps": "नक्शे और दुनिया बनाना",
-                "minecraft.services.plugins": "प्लगइन विकास",
-                "minecraft.services.textures": "बनावट और शेडर डिजाइन",
-                "team.title": "हमारी टीम",
-                "team.founders": "संस्थापक",
-                "team.admins": "प्रशासक",
-                "team.mods": "मॉडरेटर",
-                "team.developers": "डेवलपर",
-                "team.members.ceo": "CEO & संस्थापक",
-                "team.members.ceo2": "CEO",
-                "team.members.ceo3": "CEO",
-                "team.members.admin1": "मुख्य प्रशासक",
-                "team.members.admin2": "सर्वर प्रशासक",
-                "team.members.admin3": "समुदाय प्रशासक",
-                "team.members.mod1": "मुख्य मॉडरेटर",
-                "team.members.dev1": "मुख्य डेवलपर",
-                "team.members.dev2": "बिल्डर",
-                "collaborators.title": "सहयोगी",
-                "statistics.title": "हमारे आँकड़े",
-                "statistics.downloads": "क्लाइंट डाउनलोड",
-                "statistics.projects": "पूर्ण परियोजयोग",
-                "statistics.users": "सक्रिय उपयोगकर्त",
-                "statistics.experience": "वर्षों का अनुभव",
-                "contact.title": "हमें एक संदेश एक संदेश एक संदेश मैं।",
-                "contact.name": "नाम",
-                "contact.email": "ईमेल",
-                "contact.message": "संदेश",
-                "contact.send": "संदेश",
-                "contact.info.title": "संपर्क जानकारी",
-                "contact.info.discord": "हमारे Discord में शामिल हों",
-                "contact.info.hours": "सोमवार से शुक्रवा, 9:00 - 18:00 (GMT)",
-                "inbox.title": "इनबॉक्स",
-                "inbox.noMessages": "कोई नया संदेश नहीं।",
-                "inbox.clear": "सभी साफ़ करें",
-                "inbox.back": "← फॉर मोडू",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. सभी अधिकार सुरक्ष।।",
-                "maintenance.title": "साइट रखरखाव में",
-                "maintenance.message": "हम आपके अनुभवों को बेहतर बनावट।। हम जल्द ह।।",
-                "maintenance.time": "अनुमानित समय: 2 घंटे",
-                "maintenance.contact": "तत्काल पूछव संपर्क व।"
-            },
-            ko: {
-                "nav.minecraft": "Minecraft",
-                "nav.team": "팀",
-                "nav.collaborators": "협력자",
-                "n
+                "contact.message": "Message",
+                "contact.send": "Send Message",
+                "contact.info.title": "Contact Information",
+                "contact.info.discord": "Join our Discord",
+                "contact.info.hours": "Monday to Friday, 9:00 - 18:00 (GMT)",
+                "inbox.title": "Inbox",
+                "inbox.noMessages": "No new messages.",
+                "inbox.clear": "Clear All",
+                "inbox.back": "← Back to form",
+                "footer.copyright": "&copy; 2024 HexaCore Studios. All rights reserved."
+            }
+        };
+
+        
+        const languageNames = {
+            es: "Español",
+            en: "English",
+            fr: "Français",
+            de: "Deutsch",
+            it: "Italiano",
+            pt: "Português",
+            zh: "中文",
+            ja: "日本語",
+            ru: "Русский",
+            ar: "العربية",
+            hi: "हिन्दी",
+            ko: "한국어"
+        };
+
+     
+        let maintenanceMode = false;
+        const maintenanceOverlay = document.getElementById('maintenanceOverlay');
+
+        
+        function checkMaintenanceStatus() {
+            const savedStatus = localStorage.getItem('hexacore_maintenance');
+            if (savedStatus === 'true') {
+                enableMaintenanceMode();
+            }
+        }
+
+        
+        function enableMaintenanceMode() {
+            maintenanceMode = true;
+            maintenanceOverlay.classList.add('active');
+            localStorage.setItem('hexacore_maintenance', 'true');
+            
+            
+            document.body.style.overflow = 'hidden';
+        }
+
+        
+        function disableMaintenanceMode() {
+            maintenanceMode = false;
+            maintenanceOverlay.classList.remove('active');
+            localStorage.setItem('hexacore_maintenance', 'false');
+            
+            
+            document.body.style.overflow = '';
+        }
+
+        
+        document.addEventListener('keydown', function(event) {
+           
+            if (event.altKey && event.key === 'u') {
+                event.preventDefault();
+                
+                if (maintenanceMode) {
+                    disableMaintenanceMode();
+                } else {
+                    enableMaintenanceMode();
+                }
+                return false;
+            }
+            
+            
+            if (maintenanceMode) {
+                if (event.key === 'F12' || 
+                    (event.ctrlKey && (event.key === 'U') || 
+                    (event.ctrlKey && event.altKey && event.key === 'U')) {
+                    event.preventDefault();
+                    return false;
+                }
+                
+                if (event.key === 'F12' || 
+                    (event.ctrlKey && event.key === 'I') || 
+                    (event.ctrlKey && event.key === 'C')) {
+                    event.preventDefault();
+                    return false;
+                }
+                
+                if (event.altKey && event.key === 'U') {
+                    event.preventDefault();
+                    disableMaintenanceMode();
+                }
+            }
+        });
+
+        
+        function changeLanguage(lang) {
+        
+            document.documentElement.lang = lang;
+            
+
+            const langBtn = document.getElementById('current-lang');
+            langBtn.textContent = languageNames[lang];
+            
+            
+            document.querySelectorAll('.language-option').forEach(option => {
+                option.classList.remove('active');
+                if (option.dataset.lang === lang) {
+                    option.classList.add('active');
+                }
+            });
+            
+            
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        
+        document.addEventListener('DOMContentLoaded', function() {
+           
+            checkMaintenanceStatus();
+            
+            const languageBtn = document.getElementById('language-btn');
+            const languageDropdown = document.getElementById('language-dropdown');
+            const languageOptions = document.querySelectorAll('.language-option');
+            
+           
+            const savedLanguage = localStorage.getItem('preferredLanguage') || 
+                                 (navigator.language.startsWith('es') ? 'es' : 'en');
+            changeLanguage(savedLanguage);
+            
+            
+            languageBtn.addEventListener('click', function() {
+                if (!maintenanceMode) {
+                    languageDropdown.classList.toggle('active');
+                }
+            });
+            
+            
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.language-selector')) {
+                    languageDropdown.classList.remove('active');
+                }
+            });
+            
+            
+            languageOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    if (!maintenanceMode) {
+                        const selectedLang = this.getAttribute('data-lang');
+                        changeLanguage(selectedLang);
+                        languageDropdown.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const leftNav = document.getElementById('left-nav');
+
+        menuToggle.addEventListener('click', () => {
+            if (!maintenanceMode) {
+                leftNav.classList.toggle('nav-active');
+                
+                const icon = menuToggle.querySelector('i');
+                if (leftNav.classList.contains('nav-active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        });
+
+        document.querySelectorAll('.left-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                leftNav.classList.remove('nav-active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        const contactForm = document.querySelector('.contacto form');
+        const bandejaEntrada = document.getElementById('bandeja-entrada');
+        const messagesList = document.getElementById('messages-list');
+        const noMessagesDiv = document.getElementById('no-messages');
+        const clearBtn = document.getElementById('clear-btn');
+
+        function displayMessages() {
+            const messages = JSON.parse(localStorage.getItem('hexacore_messages')) || [];
+            messagesList.innerHTML = '';
+
+            if (messages.length === 0) {
+                noMessagesDiv.style.display = 'block';
+                clearBtn.style.display = 'none';
+            } else {
+                noMessagesDiv.style.display = 'none';
+                clearBtn.style.display = 'inline-block';
+                
+                messages.forEach(msg => {
+                    const li = document.createElement('li');
+                    li.className = 'message-item';
+                    
+                    li.innerHTML = `
+                        <div class="message-header">
+                            <div>
+                                <span class="message-author">${msg.name}</span>
+                                <span class="message-email">${msg.email}</span>
+                            </div>
+                            <div class="message-timestamp">${msg.timestamp}</span>
+                        </div>
+                        <div class="message-content">${msg.message}</div>
+                    `;
+                    
+                    messagesList.appendChild(li);
+                });
+            }
+        }
+
+        
+        contactForm.addEventListener('submit', function(e) {
+            if (maintenanceMode) {
+                e.preventDefault();
+                return;
+            }
+            
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+         
+            const newMessage = {
+                name: name,
+                email: email,
+                message: message,
+                timestamp: new Date().toLocaleString()
+            };
+            
+           
+            let messages = JSON.parse(localStorage.getItem('hexacore_messages')) || [];
+            
+           
+            messages.push(newMessage);
+            
+            
+            localStorage.setItem('hexacore_messages', JSON.stringify(messages));
+            
+            
+            contactForm.reset();
+            
+            
+            const currentLang = localStorage.getItem('preferredLanguage') || 'es';
+            const successMessage = currentLang === 'en' ? 'Message sent successfully!' : 
+                                  currentLang === 'fr' ? 'Message envoyé avec succès!' :
+                                  currentLang === 'de' ? 'Nachricht erfolgreich gesendet!' :
+                                  currentLang === 'it' ? 'Messaggio inviato con successo!' :
+                                  currentLang === 'pt' ? 'Mensagem enviada com sucesso!' :
+                                  'Mensaje enviado con éxito!';
+            
+           
+            const successDiv = document.createElement('div');
+            successDiv.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background-color: var(--accent-color);
+                color: white;
+                padding: 15px 20px;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0, 0.2);
+                z-index: 1000;
+                animation: slideIn 0.3s ease-out;
+            `;
+            successDiv.textContent = successMessage;
+            
+            
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            document.body.appendChild(successDiv);
+            
+            setTimeout(() => {
+                successDiv.style.animation = 'slideIn 0.3s ease-out reverse';
+                setTimeout(() => {
+                    document.body.removeChild(successDiv);
+                }, 300);
+            }, 3000);
+        });
+
+    
+        clearBtn.addEventListener('click', function() {
+            if (!maintenanceMode && confirm('¿Estás seguro de que quieres borrar todos los mensajes?')) {
+                localStorage.removeItem('hexacore_messages');
+                displayMessages();
+            }
+        });
+
+        
+        document.querySelector('.back-link').addEventListener('click', function(e) {
+            if (!maintenanceMode) {
+                e.preventDefault();
+                document.getElementById('bandeja-entrada').classList.remove('visible');
+                window.location.hash = '#contact';
+            }
+        });
+
+        
+        displayMessages();
+
+        
+        displayMessages();
+    </script>
+</body>
+</html>
