@@ -1,1594 +1,661 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="hexa.png" type="x-png">
-    <title>HexaCore Studios</title>
-    <meta name="description" content="HexaCore Studios - Principal">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<!-- saved from url=(0037)https://dash.cm-pack.pl/cosmetics.php -->
+<html lang="en" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://dash.cm-pack.pl/assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="https://dash.cm-pack.pl/assets/img/favicon.png">
+  <title>
+    Cosmetics - CMPanel
+  </title>
+  <meta name="theme-color" content="#e7c104">
+  <meta name="description" content="Manage your cosmetics on CMCLIENT, including wings, capes, and bandanas.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://panel.cm-pack.pl/cosmetics.php">
+  <meta property="og:title" content="Cosmetics">
+  <meta property="og:description" content="Manage your cosmetics on CMCLIENT, including wings, capes, and bandanas.">
+  <meta property="og:image" content="https://cdn.cmclient.pl/images/baner.png">
+  <meta property="og:site_name" content="CMPanel">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://cdn.cmclient.pl/images/baner.png">
+  <!--     Fonts and icons     -->
+  <style type="text/css">@font-face {font-family:Poppins;font-style:normal;font-weight:300;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/300/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:300;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/300/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:300;src:url(/cf-fonts/s/poppins/5.0.11/latin/300/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:400;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/400/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:400;src:url(/cf-fonts/s/poppins/5.0.11/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:400;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:500;src:url(/cf-fonts/s/poppins/5.0.11/latin/500/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:500;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/500/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:500;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/500/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:600;src:url(/cf-fonts/s/poppins/5.0.11/latin/600/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:600;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/600/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:600;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/600/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:700;src:url(/cf-fonts/s/poppins/5.0.11/latin/700/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:700;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/700/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:swap;}@font-face {font-family:Poppins;font-style:normal;font-weight:700;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/700/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}</style>
+  <!-- Nucleo Icons -->
+  <link href="./Cosmetics - CMPanel_files/nucleo-icons.css" rel="stylesheet">
+  <link href="./Cosmetics - CMPanel_files/nucleo-svg.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="./Cosmetics - CMPanel_files/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- Material Icons -->
+  <link href="./Cosmetics - CMPanel_files/icon" rel="stylesheet">
+  <!-- CSS Files -->
+  <link id="pagestyle" href="./Cosmetics - CMPanel_files/material-dashboard.css" rel="stylesheet">
+  <!-- Google AdSense -->
+  <script async="" src="./Cosmetics - CMPanel_files/f.txt" crossorigin="anonymous" type="text/javascript"></script>
+  <!-- PolarAds -->
+  <script data-cfasync="false" src="./Cosmetics - CMPanel_files/pjs3061.php"></script>
+<style>.swal2-popup.swal2-toast{box-sizing:border-box;grid-column:1/4!important;grid-row:1/4!important;grid-template-columns:1fr 99fr 1fr;padding:1em;overflow-y:hidden;background:#fff;box-shadow:0 0 1px hsla(0deg,0%,0%,.075),0 1px 2px hsla(0deg,0%,0%,.075),1px 2px 4px hsla(0deg,0%,0%,.075),1px 3px 8px hsla(0deg,0%,0%,.075),2px 4px 16px hsla(0deg,0%,0%,.075);pointer-events:all}.swal2-popup.swal2-toast>*{grid-column:2}.swal2-popup.swal2-toast .swal2-title{margin:.5em 1em;padding:0;font-size:1em;text-align:initial}.swal2-popup.swal2-toast .swal2-loading{justify-content:center}.swal2-popup.swal2-toast .swal2-input{height:2em;margin:.5em;font-size:1em}.swal2-popup.swal2-toast .swal2-validation-message{font-size:1em}.swal2-popup.swal2-toast .swal2-footer{margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-popup.swal2-toast .swal2-close{grid-column:3/3;grid-row:1/99;align-self:center;width:.8em;height:.8em;margin:0;font-size:2em}.swal2-popup.swal2-toast .swal2-html-container{margin:.5em 1em;padding:0;font-size:1em;text-align:initial}.swal2-popup.swal2-toast .swal2-html-container:empty{padding:0}.swal2-popup.swal2-toast .swal2-loader{grid-column:1;grid-row:1/99;align-self:center;width:2em;height:2em;margin:.25em}.swal2-popup.swal2-toast .swal2-icon{grid-column:1;grid-row:1/99;align-self:center;width:2em;min-width:2em;height:2em;margin:0 .5em 0 0}.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:1.8em;font-weight:700}.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-popup.swal2-toast .swal2-actions{justify-content:flex-start;height:auto;margin:0;margin-top:.5em;padding:0 .5em}.swal2-popup.swal2-toast .swal2-styled{margin:.25em .5em;padding:.4em .6em;font-size:1em}.swal2-popup.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:1.6em;height:3em;transform:rotate(45deg);border-radius:50%}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.8em;left:-.5em;transform:rotate(-45deg);transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.25em;left:.9375em;transform-origin:0 1.5em;border-radius:0 4em 4em 0}.swal2-popup.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip{-webkit-animation:swal2-toast-animate-success-line-tip .75s;animation:swal2-toast-animate-success-line-tip .75s}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long{-webkit-animation:swal2-toast-animate-success-line-long .75s;animation:swal2-toast-animate-success-line-long .75s}.swal2-popup.swal2-toast.swal2-show{-webkit-animation:swal2-toast-show .5s;animation:swal2-toast-show .5s}.swal2-popup.swal2-toast.swal2-hide{-webkit-animation:swal2-toast-hide .1s forwards;animation:swal2-toast-hide .1s forwards}.swal2-container{display:grid;position:fixed;z-index:1060;top:0;right:0;bottom:0;left:0;box-sizing:border-box;grid-template-areas:"top-start     top            top-end" "center-start  center         center-end" "bottom-start  bottom-center  bottom-end";grid-template-rows:minmax(-webkit-min-content,auto) minmax(-webkit-min-content,auto) minmax(-webkit-min-content,auto);grid-template-rows:minmax(min-content,auto) minmax(min-content,auto) minmax(min-content,auto);height:100%;padding:.625em;overflow-x:hidden;transition:background-color .1s;-webkit-overflow-scrolling:touch}.swal2-container.swal2-backdrop-show,.swal2-container.swal2-noanimation{background:rgba(0,0,0,.4)}.swal2-container.swal2-backdrop-hide{background:0 0!important}.swal2-container.swal2-bottom-start,.swal2-container.swal2-center-start,.swal2-container.swal2-top-start{grid-template-columns:minmax(0,1fr) auto auto}.swal2-container.swal2-bottom,.swal2-container.swal2-center,.swal2-container.swal2-top{grid-template-columns:auto minmax(0,1fr) auto}.swal2-container.swal2-bottom-end,.swal2-container.swal2-center-end,.swal2-container.swal2-top-end{grid-template-columns:auto auto minmax(0,1fr)}.swal2-container.swal2-top-start>.swal2-popup{align-self:start}.swal2-container.swal2-top>.swal2-popup{grid-column:2;align-self:start;justify-self:center}.swal2-container.swal2-top-end>.swal2-popup,.swal2-container.swal2-top-right>.swal2-popup{grid-column:3;align-self:start;justify-self:end}.swal2-container.swal2-center-left>.swal2-popup,.swal2-container.swal2-center-start>.swal2-popup{grid-row:2;align-self:center}.swal2-container.swal2-center>.swal2-popup{grid-column:2;grid-row:2;align-self:center;justify-self:center}.swal2-container.swal2-center-end>.swal2-popup,.swal2-container.swal2-center-right>.swal2-popup{grid-column:3;grid-row:2;align-self:center;justify-self:end}.swal2-container.swal2-bottom-left>.swal2-popup,.swal2-container.swal2-bottom-start>.swal2-popup{grid-column:1;grid-row:3;align-self:end}.swal2-container.swal2-bottom>.swal2-popup{grid-column:2;grid-row:3;justify-self:center;align-self:end}.swal2-container.swal2-bottom-end>.swal2-popup,.swal2-container.swal2-bottom-right>.swal2-popup{grid-column:3;grid-row:3;align-self:end;justify-self:end}.swal2-container.swal2-grow-fullscreen>.swal2-popup,.swal2-container.swal2-grow-row>.swal2-popup{grid-column:1/4;width:100%}.swal2-container.swal2-grow-column>.swal2-popup,.swal2-container.swal2-grow-fullscreen>.swal2-popup{grid-row:1/4;align-self:stretch}.swal2-container.swal2-no-transition{transition:none!important}.swal2-popup{display:none;position:relative;box-sizing:border-box;grid-template-columns:minmax(0,100%);width:32em;max-width:100%;padding:0 0 1.25em;border:none;border-radius:5px;background:#fff;color:#545454;font-family:inherit;font-size:1rem}.swal2-popup:focus{outline:0}.swal2-popup.swal2-loading{overflow-y:hidden}.swal2-title{position:relative;max-width:100%;margin:0;padding:.8em 1em 0;color:inherit;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word}.swal2-actions{display:flex;z-index:1;box-sizing:border-box;flex-wrap:wrap;align-items:center;justify-content:center;width:auto;margin:1.25em auto 0;padding:0}.swal2-actions:not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}.swal2-actions:not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1))}.swal2-actions:not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))}.swal2-loader{display:none;align-items:center;justify-content:center;width:2.2em;height:2.2em;margin:0 1.875em;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border-width:.25em;border-style:solid;border-radius:100%;border-color:#2778c4 transparent #2778c4 transparent}.swal2-styled{margin:.3125em;padding:.625em 1.1em;transition:box-shadow .1s;box-shadow:0 0 0 3px transparent;font-weight:500}.swal2-styled:not([disabled]){cursor:pointer}.swal2-styled.swal2-confirm{border:0;border-radius:.25em;background:initial;background-color:#7066e0;color:#fff;font-size:1em}.swal2-styled.swal2-confirm:focus{box-shadow:0 0 0 3px rgba(112,102,224,.5)}.swal2-styled.swal2-deny{border:0;border-radius:.25em;background:initial;background-color:#dc3741;color:#fff;font-size:1em}.swal2-styled.swal2-deny:focus{box-shadow:0 0 0 3px rgba(220,55,65,.5)}.swal2-styled.swal2-cancel{border:0;border-radius:.25em;background:initial;background-color:#6e7881;color:#fff;font-size:1em}.swal2-styled.swal2-cancel:focus{box-shadow:0 0 0 3px rgba(110,120,129,.5)}.swal2-styled.swal2-default-outline:focus{box-shadow:0 0 0 3px rgba(100,150,200,.5)}.swal2-styled:focus{outline:0}.swal2-styled::-moz-focus-inner{border:0}.swal2-footer{justify-content:center;margin:1em 0 0;padding:1em 1em 0;border-top:1px solid #eee;color:inherit;font-size:1em}.swal2-timer-progress-bar-container{position:absolute;right:0;bottom:0;left:0;grid-column:auto!important;overflow:hidden;border-bottom-right-radius:5px;border-bottom-left-radius:5px}.swal2-timer-progress-bar{width:100%;height:.25em;background:rgba(0,0,0,.2)}.swal2-image{max-width:100%;margin:2em auto 1em}.swal2-close{z-index:2;align-items:center;justify-content:center;width:1.2em;height:1.2em;margin-top:0;margin-right:0;margin-bottom:-1.2em;padding:0;overflow:hidden;transition:color .1s,box-shadow .1s;border:none;border-radius:5px;background:0 0;color:#ccc;font-family:serif;font-family:monospace;font-size:2.5em;cursor:pointer;justify-self:end}.swal2-close:hover{transform:none;background:0 0;color:#f27474}.swal2-close:focus{outline:0;box-shadow:inset 0 0 0 3px rgba(100,150,200,.5)}.swal2-close::-moz-focus-inner{border:0}.swal2-html-container{z-index:1;justify-content:center;margin:1em 1.6em .3em;padding:0;overflow:auto;color:inherit;font-size:1.125em;font-weight:400;line-height:normal;text-align:center;word-wrap:break-word;word-break:break-word}.swal2-checkbox,.swal2-file,.swal2-input,.swal2-radio,.swal2-select,.swal2-textarea{margin:1em 2em 3px}.swal2-file,.swal2-input,.swal2-textarea{box-sizing:border-box;width:auto;transition:border-color .1s,box-shadow .1s;border:1px solid #d9d9d9;border-radius:.1875em;background:0 0;box-shadow:inset 0 1px 1px rgba(0,0,0,.06),0 0 0 3px transparent;color:inherit;font-size:1.125em}.swal2-file.swal2-inputerror,.swal2-input.swal2-inputerror,.swal2-textarea.swal2-inputerror{border-color:#f27474!important;box-shadow:0 0 2px #f27474!important}.swal2-file:focus,.swal2-input:focus,.swal2-textarea:focus{border:1px solid #b4dbed;outline:0;box-shadow:inset 0 1px 1px rgba(0,0,0,.06),0 0 0 3px rgba(100,150,200,.5)}.swal2-file::-moz-placeholder,.swal2-input::-moz-placeholder,.swal2-textarea::-moz-placeholder{color:#ccc}.swal2-file:-ms-input-placeholder,.swal2-input:-ms-input-placeholder,.swal2-textarea:-ms-input-placeholder{color:#ccc}.swal2-file::placeholder,.swal2-input::placeholder,.swal2-textarea::placeholder{color:#ccc}.swal2-range{margin:1em 2em 3px;background:#fff}.swal2-range input{width:80%}.swal2-range output{width:20%;color:inherit;font-weight:600;text-align:center}.swal2-range input,.swal2-range output{height:2.625em;padding:0;font-size:1.125em;line-height:2.625em}.swal2-input{height:2.625em;padding:0 .75em}.swal2-file{width:75%;margin-right:auto;margin-left:auto;background:0 0;font-size:1.125em}.swal2-textarea{height:6.75em;padding:.75em}.swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;background:0 0;color:inherit;font-size:1.125em}.swal2-checkbox,.swal2-radio{align-items:center;justify-content:center;background:#fff;color:inherit}.swal2-checkbox label,.swal2-radio label{margin:0 .6em;font-size:1.125em}.swal2-checkbox input,.swal2-radio input{flex-shrink:0;margin:0 .4em}.swal2-input-label{display:flex;justify-content:center;margin:1em auto 0}.swal2-validation-message{align-items:center;justify-content:center;margin:1em 0 0;padding:.625em;overflow:hidden;background:#f0f0f0;color:#666;font-size:1em;font-weight:300}.swal2-validation-message::before{content:"!";display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center}.swal2-icon{position:relative;box-sizing:content-box;justify-content:center;width:5em;height:5em;margin:2.5em auto .6em;border:.25em solid transparent;border-radius:50%;border-color:#000;font-family:inherit;line-height:5em;cursor:default;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:3.75em}.swal2-icon.swal2-error{border-color:#f27474;color:#f27474}.swal2-icon.swal2-error .swal2-x-mark{position:relative;flex-grow:1}.swal2-icon.swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;transform:rotate(45deg)}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;transform:rotate(-45deg)}.swal2-icon.swal2-error.swal2-icon-show{-webkit-animation:swal2-animate-error-icon .5s;animation:swal2-animate-error-icon .5s}.swal2-icon.swal2-error.swal2-icon-show .swal2-x-mark{-webkit-animation:swal2-animate-error-x-mark .5s;animation:swal2-animate-error-x-mark .5s}.swal2-icon.swal2-warning{border-color:#facea8;color:#f8bb86}.swal2-icon.swal2-warning.swal2-icon-show{-webkit-animation:swal2-animate-error-icon .5s;animation:swal2-animate-error-icon .5s}.swal2-icon.swal2-warning.swal2-icon-show .swal2-icon-content{-webkit-animation:swal2-animate-i-mark .5s;animation:swal2-animate-i-mark .5s}.swal2-icon.swal2-info{border-color:#9de0f6;color:#3fc3ee}.swal2-icon.swal2-info.swal2-icon-show{-webkit-animation:swal2-animate-error-icon .5s;animation:swal2-animate-error-icon .5s}.swal2-icon.swal2-info.swal2-icon-show .swal2-icon-content{-webkit-animation:swal2-animate-i-mark .8s;animation:swal2-animate-i-mark .8s}.swal2-icon.swal2-question{border-color:#c9dae1;color:#87adbd}.swal2-icon.swal2-question.swal2-icon-show{-webkit-animation:swal2-animate-error-icon .5s;animation:swal2-animate-error-icon .5s}.swal2-icon.swal2-question.swal2-icon-show .swal2-icon-content{-webkit-animation:swal2-animate-question-mark .8s;animation:swal2-animate-question-mark .8s}.swal2-icon.swal2-success{border-color:#a5dc86;color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;transform:rotate(45deg);border-radius:50%}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.4375em;left:-2.0635em;transform:rotate(-45deg);transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.6875em;left:1.875em;transform:rotate(-45deg);transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}.swal2-icon.swal2-success .swal2-success-ring{position:absolute;z-index:2;top:-.25em;left:-.25em;box-sizing:content-box;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%}.swal2-icon.swal2-success .swal2-success-fix{position:absolute;z-index:1;top:.5em;left:1.625em;width:.4375em;height:5.625em;transform:rotate(-45deg)}.swal2-icon.swal2-success [class^=swal2-success-line]{display:block;position:absolute;z-index:2;height:.3125em;border-radius:.125em;background-color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.8125em;width:1.5625em;transform:rotate(45deg)}.swal2-icon.swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;transform:rotate(-45deg)}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-tip{-webkit-animation:swal2-animate-success-line-tip .75s;animation:swal2-animate-success-line-tip .75s}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-long{-webkit-animation:swal2-animate-success-line-long .75s;animation:swal2-animate-success-line-long .75s}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-circular-line-right{-webkit-animation:swal2-rotate-success-circular-line 4.25s ease-in;animation:swal2-rotate-success-circular-line 4.25s ease-in}.swal2-progress-steps{flex-wrap:wrap;align-items:center;max-width:100%;margin:1.25em auto;padding:0;background:0 0;font-weight:600}.swal2-progress-steps li{display:inline-block;position:relative}.swal2-progress-steps .swal2-progress-step{z-index:20;flex-shrink:0;width:2em;height:2em;border-radius:2em;background:#2778c4;color:#fff;line-height:2em;text-align:center}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:#2778c4}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step{background:#add8e6;color:#fff}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line{background:#add8e6}.swal2-progress-steps .swal2-progress-step-line{z-index:10;flex-shrink:0;width:2.5em;height:.4em;margin:0 -1px;background:#2778c4}[class^=swal2]{-webkit-tap-highlight-color:transparent}.swal2-show{-webkit-animation:swal2-show .3s;animation:swal2-show .3s}.swal2-hide{-webkit-animation:swal2-hide .15s forwards;animation:swal2-hide .15s forwards}.swal2-noanimation{transition:none}.swal2-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}.swal2-rtl .swal2-close{margin-right:initial;margin-left:0}.swal2-rtl .swal2-timer-progress-bar{right:0;left:auto}.leave-russia-now-and-apply-your-skills-to-the-world{display:flex;position:fixed;z-index:1939;top:0;right:0;bottom:0;left:0;flex-direction:column;align-items:center;justify-content:center;padding:25px 0 20px;background:#20232a;color:#fff;text-align:center}.leave-russia-now-and-apply-your-skills-to-the-world div{max-width:560px;margin:10px;line-height:146%}.leave-russia-now-and-apply-your-skills-to-the-world iframe{max-width:100%;max-height:55.5555555556vmin;margin:16px auto}.leave-russia-now-and-apply-your-skills-to-the-world strong{border-bottom:2px dashed #fff}.leave-russia-now-and-apply-your-skills-to-the-world button{display:flex;position:fixed;z-index:1940;top:0;right:0;align-items:center;justify-content:center;width:48px;height:48px;margin-right:10px;margin-bottom:-10px;border:none;background:0 0;color:#aaa;font-size:48px;font-weight:700;cursor:pointer}.leave-russia-now-and-apply-your-skills-to-the-world button:hover{color:#fff}@-webkit-keyframes swal2-toast-show{0%{transform:translateY(-.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0)}}@keyframes swal2-toast-show{0%{transform:translateY(-.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0)}}@-webkit-keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@-webkit-keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@-webkit-keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@-webkit-keyframes swal2-show{0%{transform:scale(.7)}45%{transform:scale(1.05)}80%{transform:scale(.95)}100%{transform:scale(1)}}@keyframes swal2-show{0%{transform:scale(.7)}45%{transform:scale(1.05)}80%{transform:scale(.95)}100%{transform:scale(1)}}@-webkit-keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(.5);opacity:0}}@keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(.5);opacity:0}}@-webkit-keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@-webkit-keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@-webkit-keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@-webkit-keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(.4);opacity:0}50%{margin-top:1.625em;transform:scale(.4);opacity:0}80%{margin-top:-.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(.4);opacity:0}50%{margin-top:1.625em;transform:scale(.4);opacity:0}80%{margin-top:-.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@-webkit-keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0);opacity:1}}@keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0);opacity:1}}@-webkit-keyframes swal2-rotate-loading{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes swal2-rotate-loading{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@-webkit-keyframes swal2-animate-question-mark{0%{transform:rotateY(-360deg)}100%{transform:rotateY(0)}}@keyframes swal2-animate-question-mark{0%{transform:rotateY(-360deg)}100%{transform:rotateY(0)}}@-webkit-keyframes swal2-animate-i-mark{0%{transform:rotateZ(45deg);opacity:0}25%{transform:rotateZ(-25deg);opacity:.4}50%{transform:rotateZ(15deg);opacity:.8}75%{transform:rotateZ(-5deg);opacity:1}100%{transform:rotateX(0);opacity:1}}@keyframes swal2-animate-i-mark{0%{transform:rotateZ(45deg);opacity:0}25%{transform:rotateZ(-25deg);opacity:.4}50%{transform:rotateZ(15deg);opacity:.8}75%{transform:rotateZ(-5deg);opacity:1}100%{transform:rotateX(0);opacity:1}}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto!important}body.swal2-no-backdrop .swal2-container{background-color:transparent!important;pointer-events:none}body.swal2-no-backdrop .swal2-container .swal2-popup{pointer-events:all}body.swal2-no-backdrop .swal2-container .swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}@media print{body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:scroll!important}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container{position:static!important}}body.swal2-toast-shown .swal2-container{box-sizing:border-box;width:360px;max-width:100%;background-color:transparent;pointer-events:none}body.swal2-toast-shown .swal2-container.swal2-top{top:0;right:auto;bottom:auto;left:50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{top:0;right:0;bottom:auto;left:auto}body.swal2-toast-shown .swal2-container.swal2-top-left,body.swal2-toast-shown .swal2-container.swal2-top-start{top:0;right:auto;bottom:auto;left:0}body.swal2-toast-shown .swal2-container.swal2-center-left,body.swal2-toast-shown .swal2-container.swal2-center-start{top:50%;right:auto;bottom:auto;left:0;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{top:50%;right:auto;bottom:auto;left:50%;transform:translate(-50%,-50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{top:50%;right:0;bottom:auto;left:auto;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-left,body.swal2-toast-shown .swal2-container.swal2-bottom-start{top:auto;right:auto;bottom:0;left:0}body.swal2-toast-shown .swal2-container.swal2-bottom{top:auto;right:auto;bottom:0;left:50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{top:auto;right:0;bottom:0;left:auto}</style></head>
 
-    <style>
-        :root {
-            --primary-color: #00D9FF;
-            --secondary-color: #FF00F5;
-            --accent-color: #4CAF50;
-            --background-color: #0C0C0C;
-            --surface-color: #161616;
-            --text-primary: #FFFFFF;
-            --text-secondary: #A0A0A0;
-            --font-family: 'Montserrat', sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-family);
-            background-color: var(--background-color);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        h1, h2, h3 {
-            font-weight: 800;
-            line-height: 1.2;
-        }
-
-        a {
-            color: var(--text-primary);
-            text-decoration: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        section {
-            padding: 100px 0;
-        }
-
-        .main-header {
-            background-color: rgba(12, 12, 12, 0.7);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .main-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 0;
-        }
-
-        .left-nav {
-            flex-basis: 40%;
-        }
-        .left-nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-        .left-nav a {
-            color: var(--text-secondary);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-        .left-nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-        .left-nav a:hover {
-            color: var(--text-primary);
-        }
-        .left-nav a:hover::after {
-            width: 100%;
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            flex-basis: 40%;
-            justify-content: flex-end;
-        }
-        .btn-download {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 10px 18px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .btn-download:hover {
-            background-color: #45a049;
-            transform: translateY(-2px);
-        }
-        .platform-icons a {
-            color: var(--text-secondary);
-            font-size: 1.3rem;
-            margin: 0 5px;
-            transition: color 0.3s ease;
-        }
-        .platform-icons a:hover {
-            color: var(--primary-color);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-
-        /* Selector de idioma */
-        .language-selector {
-            position: relative;
-            display: inline-block;
-        }
-
-        .language-btn {
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: var(--text-primary);
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .language-btn:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .language-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background-color: var(--surface-color);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            min-width: 150px;
-            z-index: 1000;
-            display: none;
-            overflow: hidden;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .language-dropdown.active {
-            display: block;
-        }
-
-        .language-option {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 15px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-
-        .language-option:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .language-option.active {
-            background-color: rgba(0, 217, 255, 0.2);
-        }
-
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-            position: relative;
-            background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(12, 12, 12, 0.5), rgba(12, 12, 12, 0.9));
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-        }
-
-        .hero-content h1 {
-            font-size: clamp(3rem, 10vw, 6.5rem);
-            margin-bottom: 0.5rem;
-            font-weight: 900;
-            letter-spacing: -3px;
-            line-height: 0.9;
-        }
-
-        .hero-content .tagline-1 {
-            font-size: clamp(1.5rem, 4vw, 2.2rem);
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-content .tagline-2 {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            font-weight: 600;
-            color: var(--text-secondary);
-        }
-
-        .hero-content .hero-description {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 800px;
-            margin: 2.5rem auto 0 auto;
-            font-weight: 400;
-            line-height: 1.7;
-        }
-
-        .minecraft-section .container {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-        }
-        .minecraft-text {
-            flex: 1;
-        }
-        .minecraft-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-        }
-        .minecraft-text p {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
-        .minecraft-services {
-            list-style: none;
-        }
-        .minecraft-services li {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-        .minecraft-services i {
-            color: var(--secondary-color);
-            font-size: 1.5rem;
-        }
-        .minecraft-image {
-            flex: 1;
-        }
-        .minecraft-image img {
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.2);
-        }
-        
-        .equipo-section {
-            background-color: var(--surface-color);
-            text-align: center;
-        }
-        .equipo-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .team-group {
-            margin-bottom: 4rem;
-        }
-        .team-group h3 {
-            font-size: 2rem;
-            color: var(--secondary-color);
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        .team-card {
-            background-color: var(--background-color);
-            text-align: center;
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .team-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-        }
-        .team-card img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 1.5rem auto;
-            border: 4px solid var(--primary-color);
-            object-fit: cover;
-        }
-        .team-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-        .team-card p {
-            color: var(--primary-color);
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .colaboradores {
-            text-align: center;
-        }
-        .colaboradores h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-        
-        .statistics-section {
-            background-color: var(--surface-color);
-            text-align: center;
-        }
-        .statistics-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-        .stat-item h3 {
-            font-size: 3.5rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-        .stat-item p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        .contacto {
-            background-color: var(--surface-color);
-        }
-        .contacto .container {
-            display: flex;
-            gap: 4rem;
-        }
-        .contact-form, .contact-info {
-            flex: 1;
-        }
-        .contacto h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-        .contact-form .form-group {
-            margin-bottom: 1.5rem;
-        }
-        .contact-form label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px 15px;
-            background-color: var(--background-color);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            color: var(--text-primary);
-            font-family: var(--font-family);
-            transition: border-color 0.3s ease;
-        }
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-        .contact-form button {
-            background-color: var(--primary-color);
-            color: var(--background-color);
-            padding: 12px 30px;
-            border: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-        }
-        .contact-form button:hover {
-            background-color: var(--secondary-color);
-            color: var(--text-primary);
-        }
-        .contact-info p {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .contact-info i {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-        }
-
-        .main-footer {
-            background-color: var(--background-color);
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .social-links {
-            margin-bottom: 1.5rem;
-        }
-        .social-links a {
-            font-size: 1.8rem;
-            margin: 0 15px;
-            color: var(--text-secondary);
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-        .social-links a:hover {
-            color: var(--primary-color);
-            transform: translateY(-5px);
-        }
-        .main-footer p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        
-        #bandeja-entrada {
-            display: none;
-            padding: 100px 0;
-            background-color: var(--surface-color);
-        }
-        #bandeja-entrada.visible {
-            display: block;
-        }
-        .bandeja-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: var(--background-color);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .bandeja-container h1 {
-            font-family: var(--font-family);
-            font-size: 2.5rem;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-        }
-        .message-list {
-            list-style: none;
-            max-height: 500px;
-            overflow-y: auto;
-            padding-right: 10px;
-        }
-        .message-item {
-            background-color: var(--surface-color);
-            border-left: 4px solid var(--primary-color);
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-        }
-        .message-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-        }
-        .message-author {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text-primary);
-        }
-        .message-email {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-        .message-timestamp {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-        }
-        .message-content {
-            color: var(--text-secondary);
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
-        .no-messages {
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-            padding: 40px 20px;
-        }
-        .bandeja-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
-        }
-        .btn-clear {
-            background-color: var(--secondary-color);
-            color: var(--text-primary);
-            padding: 12px 25px;
-            border: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-        }
-        .btn-clear:hover {
-            background-color: #fff;
-            color: var(--secondary-color);
-            box-shadow: 0 5px 15px rgba(255, 0, 245, 0.4);
-        }
-        .back-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        
-        .maintenance-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--background-color);
-            z-index: 9999;
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .maintenance-overlay.active {
-            display: flex;
-        }
-
-        .maintenance-icon {
-            font-size: 5rem;
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        .maintenance-title {
-            font-size: 3rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .maintenance-message {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .maintenance-time {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            font-weight: 700;
-            margin-bottom: 2rem;
-        }
-
-        .maintenance-contact {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .maintenance-social {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .maintenance-social a {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            transition: color 0.3s ease;
-        }
-
-        .maintenance-social a:hover {
-            color: var(--primary-color);
-        }
-
-        .maintenance-hint {
-            position: absolute;
-            bottom: 20px;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            opacity: 0.7;
-        }
-
-        @media (max-width: 992px) {
-            .header-actions {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .platform-icons {
-                order: -1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .left-nav {
-                position: fixed;
-                top: 80px;
-                right: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: rgba(12, 12, 12, 0.98);
-                flex-direction: column;
-                justify-content: start;
-                align-items: center;
-                padding-top: 3rem;
-                gap: 2rem;
-                transition: right 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            }
-            .left-nav.nav-active {
-                right: 0;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .main-nav .header-actions {
-                display: none;
-            }
-            section {
-                padding: 70px 0;
-            }
-            .hero {
-                background-attachment: scroll;
-            }
-            .minecraft-section .container,
-            .contacto .container {
-                flex-direction: column;
-                gap: 2rem;
-            }
-            .maintenance-title {
-                font-size: 2rem;
-            }
-            .maintenance-message {
-                font-size: 1rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="maintenance-overlay" id="maintenanceOverlay">
-        <i class="fas fa-tools maintenance-icon"></i>
-        <h1 class="maintenance-title" data-i18n="maintenance.title">Sitio en Mantenimiento</h1>
-        <p class="maintenance-message" data-i18n="maintenance.message">
-            Estamos trabajando para mejorar tu experiencia. Volveremos pronto con nuevas características y mejoras.
-        </p>
-        <p class="maintenance-time" data-i18n="maintenance.time">Tiempo estimado: 2 horas</p>
-        <p class="maintenance-contact" data-i18n="maintenance.contact">
-            Para consultas urgentes, contáctanos en: <a href="mailto:support@hexacore.com">support@hexacore.com</a>
-        </p>
-        <div class="maintenance-social">
-            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
-            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-        <p class="maintenance-hint">Presiona Alt+U para desactivar el modo mantenimiento</p>
+<body class="g-sidenav-show bg-gray-200" style="padding-right: 0px;">
+  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0">
+        <img src="./Cosmetics - CMPanel_files/SantiagoJRM" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold text-white text-lg">SantiagoJRM</span>
+      </a>
     </div>
-
-    <header class="main-header">
-        <nav class="main-nav container">
-            <div class="left-nav" id="left-nav">
-                <ul>
-                    <li><a href="#minecraft" data-i18n="nav.minecraft">Minecraft</a></li>
-                    <li><a href="#equipo" data-i18n="nav.team">Equipo</a></li>
-                    <li><a href="#collaborators" data-i18n="nav.collaborators">Colaboradores</a></li>
-                    <li><a href="#statistics" data-i18n="nav.statistics">Estadísticas</a></li>
-                    <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
-                </ul>
+    <hr class="horizontal light mt-0 mb-2">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white " href="https://dash.cm-pack.pl/dashboard.php">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">dashboard</i>
             </div>
-
-            <div class="header-actions">
-                <div class="language-selector">
-                    <button class="language-btn" id="language-btn">
-                        <span id="current-lang">Español</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="language-dropdown" id="language-dropdown">
-                        <div class="language-option active" data-lang="es">
-                            <span>Español</span>
-                        </div>
-                        <div class="language-option" data-lang="en">
-                            <span>English</span>
-                        </div>
-                        <div class="language-option" data-lang="fr">
-                            <span>Français</span>
-                        </div>
-                        <div class="language-option" data-lang="de">
-                            <span>Deutsch</span>
-                        </div>
-                        <div class="language-option" data-lang="it">
-                            <span>Italiano</span>
-                        </div>
-                        <div class="language-option" data-lang="pt">
-                            <span>Português</span>
-                        </div>
-                        <div class="language-option" data-lang="zh">
-                            <span>中文</span>
-                        </div>
-                        <div class="language-option" data-lang="ja">
-                            <span>日本語</span>
-                        </div>
-                        <div class="language-option" data-lang="ru">
-                            <span>Русский</span>
-                        </div>
-                        <div class="language-option" data-lang="ar">
-                            <span>العربية</span>
-                        </div>
-                        <div class="language-option" data-lang="hi">
-                            <span>हिन्दी</span>
-                        </div>
-                        <div class="language-option" data-lang="ko">
-                            <span>한국어</span>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="https://www.mediafire.com/file/n23qdxft2e7fv47/Hexa-Client-win-x64.exe/file" class="btn-download" target="_blank" data-i18n="nav.download">Descargar HexaCore Client</a>
-                <div class="platform-icons">
-                    <a href="#" title="Windows"><i class="fab fa-windows"></i></a>
-                    <a href="#" title="macOS"><i class="fab fa-apple"></i></a>
-                    <a href="#" title="Linux"><i class="fab fa-linux"></i></a>
-                    <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
-                </div>
+            <span class="nav-link-text ms-1">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white active bg-gradient-primary" href="https://dash.cm-pack.pl/cosmetics.php">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">build</i>
             </div>
-
-            <button class="menu-toggle" id="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
+            <span class="nav-link-text ms-1">Cosmetics</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="https://dash.cm-pack.pl/activate.php">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">redeem</i>
+            </div>
+            <span class="nav-link-text ms-1">Activate code</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="https://cmpack.tebex.io/">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">store</i>
+            </div>
+            <span class="nav-link-text ms-1">Store</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="https://cm-pack.pl/discord">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">discord</i>
+            </div>
+            <span class="nav-link-text ms-1">Discord</span>
+          </a>
+        </li>
+                                <li class="nav-item mt-3">
+          <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">My account</h6>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="https://dash.cm-pack.pl/profile.php">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">person</i>
+            </div>
+            <span class="nav-link-text ms-1">Profile</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="https://dash.cm-pack.pl/logout.php">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">logout</i>
+            </div>
+            <span class="nav-link-text ms-1">Sign Out</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="sidenav-footer position-absolute w-100 bottom-0 ">
+      <div class="mx-3">
+        <a href="https://cm-pack.pl/" class="btn bg-gradient-primary mt-4 w-100" type="button">
+          <p class="text-xs text-white mb-0">
+            <i class="fa fa-home"></i>
+            Home
+          </p>
+        </a>
+      </div>
+    </div>
+  </aside>
+  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 border-radius-xl blur shadow-blur left-auto" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="https://dash.cm-pack.pl/dashboard.php">Pages</a></li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Cosmetics</li>
+          </ol>
+          <h6 class="font-weight-bolder mb-0">Cosmetics</h6>
         </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>HEXACORE STUDIOS</h1>
-                <p class="tagline-1" data-i18n="hero.tagline1">Convertimos tus ideas</p>
-                <p class="tagline-2" data-i18n="hero.tagline2">En Experiencias Inolvidables.</p>
-                <p class="hero-description" data-i18n="hero.description">
-                    Somos un estudio de desarrollo especializado en crear experiencias únicas. Con más de 5 años de experiencia, diseñamos y organizamos servidores, eventos y proyectos de todas las escalas, garantizando innovación y calidad en cada uno.
-                </p>
-            </div>
-        </section>
-
-        <section id="minecraft" class="minecraft-section">
-            <div class="container">
-                <div class="minecraft-text">
-                    <h2 data-i18n="minecraft.title">Equipo de Minecraft</h2>
-                    <p data-i18n="minecraft.description">
-                        Con más de 5 años en la industria, dominamos el arte de crear mundos y experiencias únicas dentro de Minecraft. Desde servidores personalizados hasta mapas épicos, tu visión es nuestro próximo proyecto.
-                    </p>
-                    <ul class="minecraft-services">
-                        <li><i class="fas fa-map"></i> <span data-i18n="minecraft.services.maps">Creación de Mapas y Mundos</span></li>
-                        <li><i class="fas fa-puzzle-piece"></i> <span data-i18n="minecraft.services.plugins">Desarrollo de Plugins</span></li>
-                        <li><i class="fas fa-paint-brush"></i> <span data-i18n="minecraft.services.textures">Diseño de Texturas y Shaders</span></li>
-                    </ul>
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+          </div>
+          <ul class="navbar-nav  justify-content-end">
+            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link p-0" id="iconNavbarSidenav">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line bg-dark"></i>
+                  <i class="sidenav-toggler-line bg-dark"></i>
+                  <i class="sidenav-toggler-line bg-dark"></i>
                 </div>
-                <div class="minecraft-image">
-                    <img src="https://z-cdn-media.chatglm.cn/files/5259e51e-60c1-4ba8-b7d6-2913c49d1468.png?auth_key=1867500071-440300f345a44e1181f4bfaa188080e7-0-098c3014d4cbef1b28043d24322edd99" alt="Arte de Tecnoblade">
-                </div>
-            </div>
-        </section>
-
-        <section id="equipo" class="equipo-section">
-            <div class="container">
-                <h2 data-i18n="team.title">Nuestro Equipo</h2>
-
-                <div class="team-group">
-                    <h3 data-i18n="team.founders">Founders</h3>
-                    <div class="team-grid">
-                        <div class="team-card">
-                            <img src="https://z-cdn-media.chatglm.cn/files/a4585158-8890-4c90-8ddf-eea14268090a.png?auth_key=1867399460-ad41978d16e742dda54659da3ab10141-0-72f20b18c793f3b2d91927ec868592f4" alt="Foto de SoyGian">
-                            <h3>SoyGian</h3>
-                            <p data-i18n="team.members.ceo">CEO & Fundador</p>
-                        </div>
-                        <div class="team-card">
-                            <img src="https://z-cdn-media.chatglm.cn/files/410fd0b9-2ba8-4bc7-b23f-992a5cc2146d.jpg?auth_key=1867395569-b655d47397294d71b44aeed31bb5ac4e-0-b29789604b55e532c4a2de1c9d7ef5f0" alt="Foto de SoyPandax">
-                            <h3>SoyPandax</h3>
-                            <p data-i18n="team.members.ceo2">CEO</p>
-                        </div>
-                        <div class="team-card">
-                            <img src="https://z-cdn-media.chatglm.cn/files/43a568bd-e0b4-4141-a626-379ece54d5be.jpg?auth_key=1867396914-de28bfe48a9249578666088e8f439e33-0-2df559daf462a64b6717c665cfd04167" alt="Foto de AldHair">
-                            <h3>AldHair</h3>
-                            <p data-i18n="team.members.ceo3">CEO</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-group">
-                    <h3 data-i18n="team.admins">Admins</h3>
-                    <div class="team-grid">
-                        <div class="team-card">
-                            <img src="https://z-cdn-media.chatglm.cn/files/52862c7d-939a-4514-bb9a-583be29f50ca.png?auth_key=1867397928-1114d99bb9f24a6499dd84a0e35857c2-0-15866d60d78794e5b4c3d890a3fcfe4c" alt="Foto de Yaby">
-                            <h3>Yaby</h3>
-                            <p data-i18n="team.members.admin1">Administrador Principal</p>
-                        </div>
-                        <div class="team-card">
-                            <img src="https://z-cdn-media.chatglm.cn/files/5d575ce1-7c89-4254-a7eb-4b43d9346bb9.png?auth_key=1867398221-612741d4cd2849d5b076a5c58059d76a-0-bb9c68bc17bdd0dd0d9cd7a38041241f" alt="Foto de SxthRodrixCT">
-                            <h3>SxthRodrixCT</h3>
-                            <p data-i18n="team.members.admin2">Administrador de Servidor</p>
-                        </div>
-                        <div class="team-card">
-                            <img src="https://z-cdn-media.chatglm.cn/files/8774a3c9-4763-4548-bf03-89ab48d67119.png?auth_key=1867397290-e8250f1f4d8144d5bf8ebc33a35f0613-0-3795d3de640a4f99cd0bc14058846de0" alt="Foto de benjaelnoo2">
-                            <h3>benjaelnoo2</h3>
-                            <p data-i18n="team.members.admin3">Administrador de Comunidad</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-group">
-                    <h3 data-i18n="team.mods">Mods</h3>
-                    <div class="team-grid">
-                        <div class="team-card">
-                            <img src="https://z-cdn-media.chatglm.cn/files/a39e3ee9-7457-4b11-9551-364a96417a8a.png?auth_key=1867498288-42b9835dab2541d587e9452e7b09d4ab-0-b747e89f8693ea85031e4f7c92ac426c" alt="Foto de Craisako">
-                            <h3>Craisako</h3>
-                            <p data-i18n="team.members.mod1">Mod Principal</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-group">
-                    <h3 data-i18n="team.developers">Developers</h3>
-                    <div class="team-grid">
-                        <div class="team-card">
-                            <img src="https://z-cdn-media.chatglm.cn/files/fc48df61-057f-43fd-ba92-48bb7e1d8df6.png?auth_key=1867396776-fbecd8ad01f04d63a49697d6aa5a32cd-0-7b0aef59b871094b445e558e5cc6972b" alt="Foto de SantiagoRivers">
-                            <h3>SantiagoRivers</h3>
-                            <p data-i18n="team.members.dev1">Desarrollador Principal</p>
-                        </div>
-                        <div class="team-card">
-                            <img src="https://z-cdn-media.chatglm.cn/files/d0b27947-a16b-4df5-aac5-20a5d855e034.png?auth_key=1867500863-41c2c6927a69452eb7ec293cfcb9d384-0-04132f7b88887e6fd04989e15b666238" alt="Placeholder para BFlexo">
-                            <h3>BFlexo</h3>
-                            <p data-i18n="team.members.dev2">Builder</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="collaborators" class="colaboradores">
-            <div class="container">
-                <h2 data-i18n="collaborators.title">Colaboradores</h2>
-            </div>
-        </section>
-
-        <section id="statistics" class="statistics-section">
-            <div class="container">
-                <h2 data-i18n="statistics.title">Nuestras Estadísticas</h2>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <h3>25+</h3>
-                        <p data-i18n="statistics.downloads">Descargas del Cliente</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>5+</h3>
-                        <p data-i18n="statistics.projects">Proyectos Completados</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>2K+</h3>
-                        <p data-i18n="statistics.users">Usuarios Activos</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>5</h3>
-                        <p data-i18n="statistics.experience">Años de Experiencia</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contacto">
-            <div class="container">
-                <div class="contact-form">
-                    <h2 data-i18n="contact.title">Envíanos un mensaje</h2>
-                    <form>
-                        <div class="form-group">
-                            <label for="name" data-i18n="contact.name">Nombre</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" data-i18n="contact.email">Correo Electrónico</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" data-i18n="contact.message">Mensaje</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" data-i18n="contact.send">Enviar Mensaje</button>
-                    </form>
-                </div>
-                <div class="contact-info">
-                    <h2 data-i18n="contact.info.title">Información de Contacto</h2>
-                    <p><i class="fas fa-envelope"></i> hexacore@gmail.com</p>
-                    <p><i class="fab fa-discord"></i> <span data-i18n="contact.info.discord">Únete a nuestro Discord</span></p>
-                    <p><i class="fas fa-clock"></i> <span data-i18n="contact.info.hours">Lunes a Viernes, 9:00 - 18:00 (GMT)</span></p>
-                </div>
-            </div>
-        </section>
-
-        <section id="bandeja-entrada">
-            <div class="bandeja-container">
-                <h1 data-i18n="inbox.title">Bandeja de Entrada</h1>
-                <ul id="messages-list" class="message-list">
+              </a>
+            </li>
+            <li class="nav-item dropdown ps-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-user cursor-pointer"></i>
+              </a>
+              <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item border-radius-md" href="https://dash.cm-pack.pl/profile.php">Profile</a></li>
+                  <li><a class="dropdown-item border-radius-md" href="https://dash.cm-pack.pl/logout.php">Sign Out</a></li>
                 </ul>
-                <div id="no-messages" class="no-messages" style="display: none;">
-                    <span data-i18n="inbox.noMessages">No hay mensajes nuevos.</span>
-                </div>
-                <div class="bandeja-actions">
-                    <button id="clear-btn" class="btn-clear" data-i18n="inbox.clear">Borrar Todos</button>
-                    <a href="#contact" class="back-link" data-i18n="inbox.back">← Volver al formulario</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-discord"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-            <p data-i18n="footer.copyright">&copy; 2024 HexaCore Studios. Todos los derechos reservados.</p>
+            </li>
+            <li class="nav-item px-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link p-0">
+                <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
+              </a>
+            </li>
+            <li class="nav-item dropdown pe-2 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-bell cursor-pointer">
+                                                    </i>
+              </a>
+              <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                                              </ul>
+            </li>
+          </ul>
         </div>
-    </footer>
-
-    <script>
-        
-        const translations = {
-            es: {
-                "nav.minecraft": "Minecraft",
-                "nav.team": "Equipo",
-                "nav.collaborators": "Colaboradores",
-                "nav.statistics": "Estadísticas",
-                "nav.contact": "Contacto",
-                "nav.download": "Descargar HexaCore Client",
-                "hero.tagline1": "Convertimos tus ideas",
-                "hero.tagline2": "En Experiencias Inolvidables.",
-                "hero.description": "Somos un estudio de desarrollo especializado en crear experiencias únicas. Con más de 5 años de experiencia, diseñamos y organizamos servidores, eventos y proyectos de todas las escalas, garantizando innovación y calidad en cada uno.",
-                "minecraft.title": "Equipo de Minecraft",
-                "minecraft.description": "Con más de 5 años en la industria, dominamos el arte de crear mundos y experiencias únicas dentro de Minecraft. Desde servidores personalizados hasta mapas épicos, tu visión es nuestro próximo proyecto.",
-                "minecraft.services.maps": "Creación de Mapas y Mundos",
-                "minecraft.services.plugins": "Desarrollo de Plugins",
-                "minecraft.services.textures": "Diseño de Texturas y Shaders",
-                "team.title": "Nuestro Equipo",
-                "team.founders": "Founders",
-                "team.admins": "Admins",
-                "team.mods": "Mods",
-                "team.developers": "Developers",
-                "team.members.ceo": "CEO & Fundador",
-                "team.members.ceo2": "CEO",
-                "team.members.ceo3": "CEO",
-                "team.members.admin1": "Administrador Principal",
-                "team.members.admin2": "Administrador de Servidor",
-                "team.members.admin3": "Administrador de Comunidad",
-                "team.members.mod1": "Mod Principal",
-                "team.members.dev1": "Desarrollador Principal",
-                "team.members.dev2": "Builder",
-                "collaborators.title": "Colaboradores",
-                "statistics.title": "Nuestras Estadísticas",
-                "statistics.downloads": "Descargas del Cliente",
-                "statistics.projects": "Proyectos Completados",
-                "statistics.users": "Usuarios Activos",
-                "statistics.experience": "Años de Experiencia",
-                "contact.title": "Envíanos un mensaje",
-                "contact.name": "Nombre",
-                "contact.email": "Correo Electrónico",
-                "contact.message": "Mensaje",
-                "contact.send": "Enviar Mensaje",
-                "contact.info.title": "Información de Contacto",
-                "contact.info.discord": "Únete a nuestro Discord",
-                "contact.info.hours": "Lunes a Viernes, 9:00 - 18:00 (GMT)",
-                "inbox.title": "Bandeja de Entrada",
-                "inbox.noMessages": "No hay mensajes nuevos.",
-                "inbox.clear": "Borrar Todos",
-                "inbox.back": "← Volver al formulario",
-                "footer.copyright": "&copy; 2024 Hexa college Studios. Todos los derechos reservados."
-            },
-            en: {
-                "nav.minecraft": "Minecraft",
-                "nav.team": "Team",
-                "nav.collaborators": "Collaborators",
-                "nav.statistics": "Statistics",
-                "nav.contact": "Contact",
-                "nav.download": "Download HexaCore Client",
-                "hero.tagline1": "We transform your ideas",
-                "hero.tagline2": "Into Unforgettable Experiences.",
-                "hero.description": "We are a development studio specialized in creating unique experiences. With over 5 years of experience, we design and organize servers, events, and projects of all scales, ensuring innovation and quality in each one.",
-                "minecraft.title": "Minecraft Team",
-                "minecraft.description": "With over 5 years in the industry, we master the art of creating worlds and unique experiences within Minecraft. From custom servers to epic maps, your vision is our next project.",
-                "minecraft.services.maps": "Map and World Creation",
-                "minecraft.services.plugins": "Plugin Development",
-                "minecraft.services.textures": "Texture and Shader Design",
-                "team.title": "Our Team",
-                "team.founders": "Founders",
-                "team.admins": "Admins",
-                "team.mods": "Mods",
-                "team.developers": "Developers",
-                "team.members.ceo": "CEO & Founder",
-                "team.members.ceo2": "CEO",
-                "team.members.ceo3": "CEO",
-                "team.members.admin1": "Main Administrator",
-                "team.members.admin2": "Server Administrator",
-                "team.members.admin3": "Community Administrator",
-                "team.members.mod1": "Main Mod",
-                "team.members.dev1": "Main Developer",
-                "team.members.dev2": "Builder",
-                "collaborators.title": "Collaborators",
-                "statistics.title": "Our Statistics",
-                "statistics.downloads": "Client Downloads",
-                "statistics.projects": "Completed Projects",
-                "statistics.users": "Active Users",
-                "statistics.experience": "Years of Experience",
-                "contact.title": "Send us a message",
-                "contact.name": "Name",
-                "contact.email": "Email",
-                "contact.message": "Message",
-                "contact.send": "Send Message",
-                "contact.info.title": "Contact Information",
-                "contact.info.discord": "Join our Discord",
-                "contact.info.hours": "Monday to Friday, 9:00 - 18:00 (GMT)",
-                "inbox.title": "Inbox",
-                "inbox.noMessages": "No new messages.",
-                "inbox.clear": "Clear All",
-                "inbox.back": "← Back to form",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. All rights reserved."
-            },
-            fr: {
-                "nav.minecraft": "Minecraft",
-                "nav.team": "Équipe",
-                "nav.collaborators": "Collaborateurs",
-                "nav.statistics": "Statistiques",
-                "nav.contact": "Contact",
-                "nav.download": "Télécharger HexaCore Client",
-                "hero.tagline1": "Nous transformons vos idées",
-                "hero.tagline2": "En Expériences Inoubliables.",
-                "hero.description": "Nous sommes un studio de développement spécialisé dans la création d'expériences uniques. Avec plus de 5 ans d'expérience, nous concevons et organisons des serveurs, des événements et des projets de toutes tailles, garantissant innovation et qualité dans chacun.",
-                "minecraft.title": "Équipe Minecraft",
-                "minecraft.description": "Avec plus de 5 ans dans l'industrie, nous maîtrisons l'art de créer des mondes et des expériences uniques dans Minecraft. Des serveurs personnalisés aux cartes épiques, votre vision est notre prochain projet.",
-                "minecraft.services.maps": "Création de Cartes et Mondes",
-                "minecraft.services.plugins": "Développement de Plugins",
-                "minecraft.services.textures": "Design de Textures et Shaders",
-                "team.title": "Notre Équipe",
-                "team.founders": "Fondateurs",
-                "team.admins": "Administrateurs",
-                "team.mods": "Modérateurs",
-                "team.developers": "Développeurs",
-                "team.members.ceo": "PDG & Fondateur",
-                "team.members.ceo2": "PDG & Fondateur",
-                "team.members.ceo3": "PDG",
-                "team.members.admin1": "Administrateur Principal",
-                "team.members.admin2": "Administrateur de Serveur",
-                "team.members.admin3": "Administrateur de Communauté",
-                "team.members.mod1": "Mod Principal",
-                "team.members.dev1": "Développeur Principal",
-                "team.members.dev2": "Builder",
-                "collaborators.title": "Collaborateurs",
-                "statistics.title": "Nos Statistiques",
-                "statistics.downloads": "Téléchargements du Client",
-                "statistics.projects": "Projets Terminés",
-                "statistics.users": "Utilisateurs Actifs",
-                "statistics.experience": "Années d'Expérience",
-                "contact.title": "Envoyez un mensaje",
-                "contact.name": "Nom",
-                "contact.email": "Email",
-                "contact.message": "Message",
-                "contact.send": "Envoyer Mensaje",
-                "contact.info.title": "Informations de Contact",
-                "contact.info.discord": "Rejoignez à notre Discord",
-                "contact.info.hours": "Lundi à Vendredi, 9:00 - 18:00 (GMT)",
-                "inbox.title": "Boîte de Réception",
-                "inbox.noMessages": "Aucun nouveau message.",
-                "inbox.clear": "Tout Supprimer",
-                "inbox.back": "← Retour au formulaire",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. Tous droits réservés."
-            },
-            de: {
-                "nav.minecraft": "Minecraft",
-                "nav.team": "Équipe",
-                "nav.collaborators": "Collaborateurs",
-                "nav.statistics": "Statistiques",
-                "nav.contact": "Contact",
-                "nav.download": "Télécharger HexaCore Client",
-                "hero.tagline1": "Nous transformons vos idées",
-                "hero.tagline2": "En Expériences Inoubliables.",
-                "hero.description": "Nous sommes un studio de développement spécialisé dans la création d'expériences uniques. Avec plus de 5 ans d'expérience, nous concevons et organisons des serveurs, des événements et des projets de toutes tailles, garantissant innovation et qualité dans chacun.",
-                "minecraft.title": "Équipe Minecraft",
-                "minecraft.description": "Avec plus de 5 ans dans l'industrie, nous maîtrisons l'art de créer des mondes et des expériences uniques dans Minecraft. Des serveurs personnalisés aux cartes épiques, votre vision est notre prochain projet.",
-                "minecraft.services.maps": "Création de Cartes et Mondes",
-                "minecraft.services.plugins": "Développement de Plugins",
-                "minecraft.services.textures": "Design de Textures et Shaders",
-                "team.title": "Notre Équipe",
-                "team.founders": "Fondateurs",
-                "team.admins": "Administrateurs",
-                "team.mods": "Modérateurs",
-                "team.developers": "Développeurs",
-                "team.members.ceo": "PDG & Fondateur",
-                "team.members.ceo2": "PDG & Fondateur",
-                "team.members.ceo3": "PDG",
-                "team.members.admin1": "Administrateur Principal",
-                "team.members.admin2": "Administrateur de Serveur",
-                "team.members.admin3": "Administrateur de Communauté",
-                "team.members.mod1": "Mod Principal",
-                "team.members.dev1": "Développeur Principal",
-                "team.members.dev2": "Builder",
-                "collaborators.title": "Collaborateurs",
-                "statistics.title": "Nos Statistiques",
-                "statistics.downloads": "Téléchargements du Client",
-                "statistics.projects": "Projets Terminés",
-                "statistics.users": "Utilisateurs Actifs",
-                "statistics.experience": "Années d'Expérience",
-                "contact.title": "Envoyez-nous un message",
-                "contact.name": "Nom",
-                "contact.email": "Email",
-                "contact.message": "Message",
-                "contact.send": "Envoyer Mensaje",
-                "contact.info.title": "Informations de Contacto",
-                "contact.info.discord": "Rejoignez à notre Discord",
-                "contact.info.hours": "Lundi à Vendredi, 9:00 - 18:00 (GMT)",
-                "inbox.title": "Boîte de Réception",
-                "inbox.noMessages": "Aucun nouveau message.",
-                "inbox.clear": "Tout Supprimer",
-                "inbox.back": "← Retour au formulaire",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. Tous droits réservés."
-            },
-            it: {
-                "nav.minecraft": "Minecraft",
-                "nav.team": "Team",
-                "nav.collaborators": "Collaborators",
-                "nav.statistics": "Statistics",
-                "nav.contact": "Contact",
-                "nav.download": "Download HexaCore Client",
-                "hero.tagline1": "Trasformiamo tus ideas",
-                "hero.tagline2": "En Experiencias Inolvidables.",
-                "hero.description": "Somos un estudio de desarrollo especializado en crear experiencias únicas. Con más de 5 años de experiencia, diseñamos y organizamos servidores, eventos y proyectos de todas las escalas, garantizando innovación y calidad en cada uno.",
-                "minecraft.title": "Minecraft Team",
-                "minecraft.description": "Con más de 5 años en la industria, dominamos el arte de crear mundos y experiencias únicas dentro de Minecraft. Desde servidores personalizados hasta mapas épicos, tu visión es nuestro próximo proyecto.",
-                "minecraft.services.maps": "Map and World Creation",
-                "minecraft.services.plugins": "Plugin Development",
-                "minecraft.services.textures": "Texture and Shader Design",
-                "team.title": "Our Team",
-                "team.founders": "Founders",
-                "team.admins": "Admins",
-                "team.mods": "Mods",
-                "team.developers": "Developers",
-                "team.members.ceo": "CEO & Founder",
-                "team.members.ceo2": "CEO",
-                "team.members.ceo3": "CEO",
-                "team.members.admin1": "Main Administrator",
-                "team.members.admin2": "Server Administrator",
-                "team.members.admin3": "Community Administrator",
-                "team.members.mod1": "Main Mod",
-                "team.members.dev1": "Main Developer",
-                "team.members.dev2": "Builder",
-                "collaborators.title": "Collaborators",
-                "statistics.title": "Our Statistics",
-                "statistics.downloads": "Client Downloads",
-                "statistics.projects": "Completed Projects",
-                "statistics.users": "Active Users",
-                "statistics.experience": "Years of Experience",
-                "contact.title": "Send us a message",
-                "contact.name": "Name",
-                "contact.email": "Email",
-                "contact.message": "Message",
-                "contact.send": "Send Message",
-                "contact.info.title": "Contact Information",
-                "contact.info.discord": "Join our Discord",
-                "contact.info.hours": "Monday to Friday, 9:00 - 18:00 (GMT)",
-                "inbox.title": "Inbox",
-                "inbox.noMessages": "No new messages.",
-                "inbox.clear": "Clear All",
-                "inbox.back": "← Back to form",
-                "footer.copyright": "&copy; 2024 HexaCore Studios. All rights reserved."
-            }
-        };
-
-        
-        const languageNames = {
-            es: "Español",
-            en: "English",
-            fr: "Français",
-            de: "Deutsch",
-            it: "Italiano",
-            pt: "Português",
-            zh: "中文",
-            ja: "日本語",
-            ru: "Русский",
-            ar: "العربية",
-            hi: "हिन्दी",
-            ko: "한국어"
-        };
-
-     
-        let maintenanceMode = false;
-        const maintenanceOverlay = document.getElementById('maintenanceOverlay');
-
-        
-        function checkMaintenanceStatus() {
-            const savedStatus = localStorage.getItem('hexacore_maintenance');
-            if (savedStatus === 'true') {
-                enableMaintenanceMode();
-            }
-        }
-
-        
-        function enableMaintenanceMode() {
-            maintenanceMode = true;
-            maintenanceOverlay.classList.add('active');
-            localStorage.setItem('hexacore_maintenance', 'true');
-            
-            
-            document.body.style.overflow = 'hidden';
-        }
-
-        
-        function disableMaintenanceMode() {
-            maintenanceMode = false;
-            maintenanceOverlay.classList.remove('active');
-            localStorage.setItem('hexacore_maintenance', 'false');
-            
-            
-            document.body.style.overflow = '';
-        }
-
-        
-        document.addEventListener('keydown', function(event) {
-           
-            if (event.altKey && event.key === 'u') {
-                event.preventDefault();
-                
-                if (maintenanceMode) {
-                    disableMaintenanceMode();
-                } else {
-                    enableMaintenanceMode();
-                }
-                return false;
-            }
-            
-            
-            if (maintenanceMode) {
-                if (event.key === 'F12' || 
-                    (event.ctrlKey && (event.key === 'U') || 
-                    (event.ctrlKey && event.altKey && event.key === 'U')) {
-                    event.preventDefault();
-                    return false;
-                }
-                
-                if (event.key === 'F12' || 
-                    (event.ctrlKey && event.key === 'I') || 
-                    (event.ctrlKey && event.key === 'C')) {
-                    event.preventDefault();
-                    return false;
-                }
-                
-                if (event.altKey && event.key === 'U') {
-                    event.preventDefault();
-                    disableMaintenanceMode();
-                }
-            }
-        });
-
-        
-        function changeLanguage(lang) {
-        
-            document.documentElement.lang = lang;
-            
-
-            const langBtn = document.getElementById('current-lang');
-            langBtn.textContent = languageNames[lang];
-            
-            
-            document.querySelectorAll('.language-option').forEach(option => {
-                option.classList.remove('active');
-                if (option.dataset.lang === lang) {
-                    option.classList.add('active');
-                }
-            });
-            
-            
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
-            
-            
-            localStorage.setItem('preferredLanguage', lang);
-        }
-
-        
-        document.addEventListener('DOMContentLoaded', function() {
-           
-            checkMaintenanceStatus();
-            
-            const languageBtn = document.getElementById('language-btn');
-            const languageDropdown = document.getElementById('language-dropdown');
-            const languageOptions = document.querySelectorAll('.language-option');
-            
-           
-            const savedLanguage = localStorage.getItem('preferredLanguage') || 
-                                 (navigator.language.startsWith('es') ? 'es' : 'en');
-            changeLanguage(savedLanguage);
-            
-            
-            languageBtn.addEventListener('click', function() {
-                if (!maintenanceMode) {
-                    languageDropdown.classList.toggle('active');
-                }
-            });
-            
-            
-            document.addEventListener('click', function(event) {
-                if (!event.target.closest('.language-selector')) {
-                    languageDropdown.classList.remove('active');
-                }
-            });
-            
-            
-            languageOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    if (!maintenanceMode) {
-                        const selectedLang = this.getAttribute('data-lang');
-                        changeLanguage(selectedLang);
-                        languageDropdown.classList.remove('active');
-                    }
-                });
-            });
-        });
-
-        const menuToggle = document.getElementById('menu-toggle');
-        const leftNav = document.getElementById('left-nav');
-
-        menuToggle.addEventListener('click', () => {
-            if (!maintenanceMode) {
-                leftNav.classList.toggle('nav-active');
-                
-                const icon = menuToggle.querySelector('i');
-                if (leftNav.classList.contains('nav-active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            }
-        });
-
-        document.querySelectorAll('.left-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                leftNav.classList.remove('nav-active');
-                const icon = menuToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            });
-        });
-
-        const contactForm = document.querySelector('.contacto form');
-        const bandejaEntrada = document.getElementById('bandeja-entrada');
-        const messagesList = document.getElementById('messages-list');
-        const noMessagesDiv = document.getElementById('no-messages');
-        const clearBtn = document.getElementById('clear-btn');
-
-        function displayMessages() {
-            const messages = JSON.parse(localStorage.getItem('hexacore_messages')) || [];
-            messagesList.innerHTML = '';
-
-            if (messages.length === 0) {
-                noMessagesDiv.style.display = 'block';
-                clearBtn.style.display = 'none';
-            } else {
-                noMessagesDiv.style.display = 'none';
-                clearBtn.style.display = 'inline-block';
-                
-                messages.forEach(msg => {
-                    const li = document.createElement('li');
-                    li.className = 'message-item';
-                    
-                    li.innerHTML = `
-                        <div class="message-header">
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-6">
+          <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+              <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                <h6 class="text-white text ps-3">Your cosmetics access</h6>
+              </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center justify-content-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Access</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                                          <tr>
+                        <td>
+                                                    <div class="d-flex px-2">
                             <div>
-                                <span class="message-author">${msg.name}</span>
-                                <span class="message-email">${msg.email}</span>
+                              <img src="./Cosmetics - CMPanel_files/cosmetic-cape.png" class="avatar avatar-sm rounded-circle me-2">
                             </div>
-                            <div class="message-timestamp">${msg.timestamp}</span>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Cape</h6>
+                                                          </div>
+                          </div>
+                        </td>
+                        <td>
+                                                <span class="badge badge-sm bg-gradient-success">Yes</span>
+                        </td>
+                      </tr>
+                                          <tr>
+                        <td>
+                                                    <div class="d-flex px-2">
+                            <div>
+                              <img src="./Cosmetics - CMPanel_files/cosmetic-cape.png" class="avatar avatar-sm rounded-circle me-2">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Cape</h6>
+                                                              <p class="text-xs text-secondary mb-0">Special</p>
+                                                          </div>
+                          </div>
+                        </td>
+                        <td>
+                                                <span class="badge badge-sm bg-gradient-secondary">No</span>
+                        </td>
+                      </tr>
+                                          <tr>
+                        <td>
+                                                    <div class="d-flex px-2">
+                            <div>
+                              <img src="./Cosmetics - CMPanel_files/cosmetic-cape.png" class="avatar avatar-sm rounded-circle me-2">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Cape</h6>
+                                                              <p class="text-xs text-secondary mb-0">Animated</p>
+                                                          </div>
+                          </div>
+                        </td>
+                        <td>
+                                                <span class="badge badge-sm bg-gradient-secondary">No</span>
+                        </td>
+                      </tr>
+                                          <tr>
+                        <td>
+                                                    <div class="d-flex px-2">
+                            <div>
+                              <img src="./Cosmetics - CMPanel_files/cosmetic-hat.png" class="avatar avatar-sm rounded-circle me-2">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Hat</h6>
+                                                          </div>
+                          </div>
+                        </td>
+                        <td>
+                                                <span class="badge badge-sm bg-gradient-secondary">No</span>
+                        </td>
+                      </tr>
+                                          <tr>
+                        <td>
+                                                    <div class="d-flex px-2">
+                            <div>
+                              <img src="./Cosmetics - CMPanel_files/cosmetic-bandana.png" class="avatar avatar-sm rounded-circle me-2">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Bandana</h6>
+                                                          </div>
+                          </div>
+                        </td>
+                        <td>
+                                                <span class="badge badge-sm bg-gradient-success">Yes</span>
+                        </td>
+                      </tr>
+                                          <tr>
+                        <td>
+                                                    <div class="d-flex px-2">
+                            <div>
+                              <img src="./Cosmetics - CMPanel_files/cosmetic-item.png" class="avatar avatar-sm rounded-circle me-2">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Item</h6>
+                                                          </div>
+                          </div>
+                        </td>
+                        <td>
+                                                <span class="badge badge-sm bg-gradient-secondary">No</span>
+                        </td>
+                      </tr>
+                                          <tr>
+                        <td>
+                                                    <div class="d-flex px-2">
+                            <div>
+                              <img src="./Cosmetics - CMPanel_files/cosmetic-pet.png" class="avatar avatar-sm rounded-circle me-2">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Pet</h6>
+                                                          </div>
+                          </div>
+                        </td>
+                        <td>
+                                                <span class="badge badge-sm bg-gradient-secondary">No</span>
+                        </td>
+                      </tr>
+                                          <tr>
+                        <td>
+                                                    <div class="d-flex px-2">
+                            <div>
+                              <img src="./Cosmetics - CMPanel_files/cosmetic-wings.png" class="avatar avatar-sm rounded-circle me-2">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Wings</h6>
+                                                          </div>
+                          </div>
+                        </td>
+                        <td>
+                                                <span class="badge badge-sm bg-gradient-success">Yes</span>
+                        </td>
+                      </tr>
+                                          <tr>
+                        <td>
+                                                    <div class="d-flex px-2">
+                            <div>
+                              <img src="./Cosmetics - CMPanel_files/cosmetic-wings.png" class="avatar avatar-sm rounded-circle me-2">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Wings</h6>
+                                                              <p class="text-xs text-secondary mb-0">Tier2</p>
+                                                          </div>
+                          </div>
+                        </td>
+                        <td>
+                                                <span class="badge badge-sm bg-gradient-secondary">No</span>
+                        </td>
+                      </tr>
+                                          <tr>
+                        <td>
+                                                    <div class="d-flex px-2">
+                            <div>
+                              <img src="./Cosmetics - CMPanel_files/cosmetic-wings.png" class="avatar avatar-sm rounded-circle me-2">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Wings</h6>
+                                                              <p class="text-xs text-secondary mb-0">Tier3</p>
+                                                          </div>
+                          </div>
+                        </td>
+                        <td>
+                                                <span class="badge badge-sm bg-gradient-secondary">No</span>
+                        </td>
+                      </tr>
+                                          <tr>
+                        <td>
+                                                    <div class="d-flex px-2">
+                            <div>
+                              <img src="./Cosmetics - CMPanel_files/cosmetic-wings.png" class="avatar avatar-sm rounded-circle me-2">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Wings</h6>
+                                                              <p class="text-xs text-secondary mb-0">Tier4</p>
+                                                          </div>
+                          </div>
+                        </td>
+                        <td>
+                                                <span class="badge badge-sm bg-gradient-secondary">No</span>
+                        </td>
+                      </tr>
+                                          <tr>
+                        <td>
+                                                    <div class="d-flex px-2">
+                            <div>
+                              <img src="./Cosmetics - CMPanel_files/cosmetic-wings.png" class="avatar avatar-sm rounded-circle me-2">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Wings</h6>
+                                                              <p class="text-xs text-secondary mb-0">Tier5</p>
+                                                          </div>
+                          </div>
+                        </td>
+                        <td>
+                                                <span class="badge badge-sm bg-gradient-secondary">No</span>
+                        </td>
+                      </tr>
+                                          <tr>
+                        <td>
+                                                    <div class="d-flex px-2">
+                            <div>
+                              <img src="./Cosmetics - CMPanel_files/cosmetic-wings.png" class="avatar avatar-sm rounded-circle me-2">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Wings</h6>
+                                                              <p class="text-xs text-secondary mb-0">Special</p>
+                                                          </div>
+                          </div>
+                        </td>
+                        <td>
+                                                <span class="badge badge-sm bg-gradient-secondary">No</span>
+                        </td>
+                      </tr>
+                                          <tr>
+                        <td>
+                                                    <div class="d-flex px-2">
+                            <div>
+                              <img src="./Cosmetics - CMPanel_files/cosmetic-wings.png" class="avatar avatar-sm rounded-circle me-2">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Wings</h6>
+                                                              <p class="text-xs text-secondary mb-0">Other</p>
+                                                          </div>
+                          </div>
+                        </td>
+                        <td>
+                                                <span class="badge badge-sm bg-gradient-secondary">No</span>
+                        </td>
+                      </tr>
+                                      </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+              <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                <h6 class="text-white text ps-3">Your current cosmetics</h6>
+              </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">ID</th>
+                      <th class="text-secondary opacity-7"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                                          <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="./Cosmetics - CMPanel_files/cosmetic-bandana.png" class="avatar avatar-sm me-3 border-radius-lg">
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Bandana</h6>
+                          </div>
                         </div>
-                        <div class="message-content">${msg.message}</div>
-                    `;
-                    
-                    messagesList.appendChild(li);
-                });
-            }
-        }
+                      </td>
+                      <td>
+                        <p class="text-xs font-weight-bold mb-0">71</p>
+                      </td>
+                    </tr>
+                                          <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="./Cosmetics - CMPanel_files/cosmetic-cape.png" class="avatar avatar-sm me-3 border-radius-lg">
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Cape</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-xs font-weight-bold mb-0">2</p>
+                      </td>
+                    </tr>
+                                      </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="alert alert-warning text-white" role="alert">
+          <p class="mb-1"><strong>Remember!</strong> Nickname in the panel must be the same as in the game (case-sensitive).</p>
+          <p class="mb-0">You can change your nickname in <a href="https://dash.cm-pack.pl/profile.php" class="text-white font-weight-bold">your profile</a>.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+              <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                <h6 class="text-white text ps-3">Change cosmetics</h6>
+              </div>
+            </div>
+            <div class="card-body px-4 col-sm-6">
+              <form method="post">
+                <div class="input-group input-group-outline my-3">
+                  <select name="type" id="type" class="form-control">
+                    <option value="wings">Wings</option>
+                    <option value="cape">Cape</option>
+                    <option value="bandana">Bandana</option>
+                    <option value="animatedcape">Animated Cape</option>
+                    <option value="hat">Hat</option>
+                    <option value="item">Item</option>
+                    <option value="pet">Pet</option>
+                  </select>
+                </div>
+                <div class="input-group input-group-outline my-3">
+                  <label class="form-label">Cosmetic ID</label>
+                  <input name="id" id="id" type="number" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                </div>
+                <button class="btn btn-icon btn-3 btn-success" type="submit" name="action" value="add">
+                  <span class="btn-inner--icon"><i class="material-icons">add</i></span>
+                  <span class="btn-inner--text">Add cosmetic</span>
+                </button>
+                <button class="btn btn-icon btn-3 btn-primary" type="submit" name="action" value="remove">
+                  <span class="btn-inner--icon"><i class="material-icons">delete</i></span>
+                  <span class="btn-inner--text">Remove cosmetic</span>
+                </button>
+              </form>
+            </div>
+          </div>
+          <button class="btn btn-icon btn-3 btn-info" type="button" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open(&#39;https://cmpack.tebex.io/category/1899336&#39;, &#39;_blank&#39;)">
+            <span class="btn-inner--icon"><i class="material-icons">store</i></span>
+            <span class="btn-inner--text">Get more cosmetics</span>
+          </button>
+          <button class="btn btn-icon btn-3 btn-info" type="button" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open(&#39;https://cm-pack.pl/discord&#39;, &#39;_blank&#39;)">
+            <span class="btn-inner--icon"><i class="material-icons">discord</i></span>
+            <span class="btn-inner--text">Discord</span>
+          </button>
+        </div>
+      </div>
+      <div class="position-fixed top-6 end-2 z-index-2">
+        <div class="toast fade hide p-2 bg-white" role="alert" aria-live="assertive" id="successToast" aria-atomic="true">
+          <div class="toast-header border-0">
+            <i class="material-icons text-success me-2">
+              notifications
+            </i>
+            <span id="alert-title" class="me-auto font-weight-bold"></span>
+            <small id="alert-date" class="text-body"></small>
+            <i class="fas fa-times text-md ms-3 cursor-pointer" data-bs-dismiss="toast" aria-label="Close"></i>
+          </div>
+          <hr class="horizontal dark m-0">
+          <div id="alert-message" class="toast-body"></div>
+        </div>
+      </div>
+      <footer class="footer py-4  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+              <div class="copyright text-center text-sm text-muted text-lg-start">
+                © CMCLIENT <script type="text/javascript">document.write(new Date().getFullYear())</script>2026. All Rights Reserved.
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                <li class="nav-item">
+                  <a href="https://cm-pack.pl/discord" class="nav-link text-muted" target="_blank">Discord</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.youtube.com/cmclient" class="nav-link text-muted" target="_blank">YouTube</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://cm-pack.pl/" class="nav-link text-muted" target="_blank">Download</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+  <div class="fixed-plugin">
+    <div class="card shadow-lg">
+      <div class="card-header pb-0 pt-3">
+        <div class="float-start">
+          <h5 class="mt-3 mb-0">Material UI Configurator</h5>
+          <p>See our dashboard options.</p>
+        </div>
+        <div class="float-end mt-4">
+          <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
+            <i class="material-icons">clear</i>
+          </button>
+        </div>
+        <!-- End Toggle Button -->
+      </div>
+      <hr class="horizontal dark my-1">
+      <div class="card-body pt-sm-3 pt-0">
+        <!-- Sidebar Backgrounds -->
+        <div>
+          <h6 class="mb-0">Sidebar Colors</h6>
+        </div>
+        <a href="javascript:void(0)" class="switch-trigger background-color">
+          <div class="badge-colors my-2 text-start">
+            <span class="badge filter bg-gradient-primary active" data-color="primary" onclick="if (!window.__cfRLUnblockHandlers) return false; sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-dark" data-color="dark" onclick="if (!window.__cfRLUnblockHandlers) return false; sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-info" data-color="info" onclick="if (!window.__cfRLUnblockHandlers) return false; sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-success" data-color="success" onclick="if (!window.__cfRLUnblockHandlers) return false; sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-warning" data-color="warning" onclick="if (!window.__cfRLUnblockHandlers) return false; sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-danger" data-color="danger" onclick="if (!window.__cfRLUnblockHandlers) return false; sidebarColor(this)"></span>
+          </div>
+        </a>
+        <!-- Sidenav Type -->
+        <div class="mt-3">
+          <h6 class="mb-0">Sidenav Type</h6>
+          <p class="text-sm">Choose between 2 different sidenav types.</p>
+        </div>
+        <div class="d-flex">
+          <button class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark" onclick="if (!window.__cfRLUnblockHandlers) return false; sidebarType(this)">Dark</button>
+          <button class="btn bg-gradient-dark px-3 mb-2 ms-2" data-class="bg-transparent" onclick="if (!window.__cfRLUnblockHandlers) return false; sidebarType(this)">Transparent</button>
+          <button class="btn bg-gradient-dark px-3 mb-2 ms-2" data-class="bg-white" onclick="if (!window.__cfRLUnblockHandlers) return false; sidebarType(this)">White</button>
+        </div>
+        <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
+        <!-- Navbar Fixed -->
+        <div class="mt-3 d-flex">
+          <h6 class="mb-0">Navbar Fixed</h6>
+          <div class="form-check form-switch ps-0 ms-auto my-auto">
+            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" onclick="if (!window.__cfRLUnblockHandlers) return false; navbarFixed(this)" checked="true">
+          </div>
+        </div>
+        <hr class="horizontal dark my-3">
+        <div class="mt-2 d-flex">
+          <h6 class="mb-0">Light / Dark</h6>
+          <div class="form-check form-switch ps-0 ms-auto my-auto">
+            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="if (!window.__cfRLUnblockHandlers) return false; darkMode(this)" unchecked="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="./Cosmetics - CMPanel_files/popper.min.js.descarga" type="text/javascript"></script>
+  <script src="./Cosmetics - CMPanel_files/bootstrap.min.js.descarga" type="text/javascript"></script>
+  <script src="./Cosmetics - CMPanel_files/sweetalert.min.js.descarga" type="text/javascript"></script>
+  <script type="text/javascript">
+    function clickedAlert(a, b, c) {
+      document.getElementById("alert-title").innerHTML = a;
+      document.getElementById("alert-message").innerHTML = b;
+      document.getElementById("alert-date").innerHTML = c;
+    }
+    function showAlert(title, text, icon) {
+      const darkMode = document.getElementById("dark-version").checked;
 
-        
-        contactForm.addEventListener('submit', function(e) {
-            if (maintenanceMode) {
-                e.preventDefault();
-                return;
-            }
-            
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-         
-            const newMessage = {
-                name: name,
-                email: email,
-                message: message,
-                timestamp: new Date().toLocaleString()
-            };
-            
-           
-            let messages = JSON.parse(localStorage.getItem('hexacore_messages')) || [];
-            
-           
-            messages.push(newMessage);
-            
-            
-            localStorage.setItem('hexacore_messages', JSON.stringify(messages));
-            
-            
-            contactForm.reset();
-            
-            
-            const currentLang = localStorage.getItem('preferredLanguage') || 'es';
-            const successMessage = currentLang === 'en' ? 'Message sent successfully!' : 
-                                  currentLang === 'fr' ? 'Message envoyé avec succès!' :
-                                  currentLang === 'de' ? 'Nachricht erfolgreich gesendet!' :
-                                  currentLang === 'it' ? 'Messaggio inviato con successo!' :
-                                  currentLang === 'pt' ? 'Mensagem enviada com sucesso!' :
-                                  'Mensaje enviado con éxito!';
-            
-           
-            const successDiv = document.createElement('div');
-            successDiv.style.cssText = `
-                position: fixed;
-                top: 100px;
-                right: 20px;
-                background-color: var(--accent-color);
-                color: white;
-                padding: 15px 20px;
-                border-radius: 5px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0, 0.2);
-                z-index: 1000;
-                animation: slideIn 0.3s ease-out;
-            `;
-            successDiv.textContent = successMessage;
-            
-            
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes slideIn {
-                    from { transform: translateX(100%); opacity: 0; }
-                    to { transform: translateX(0); opacity: 1; }
-                }
-            `;
-            document.head.appendChild(style);
-            
-            document.body.appendChild(successDiv);
-            
-            setTimeout(() => {
-                successDiv.style.animation = 'slideIn 0.3s ease-out reverse';
-                setTimeout(() => {
-                    document.body.removeChild(successDiv);
-                }, 300);
-            }, 3000);
-        });
+      Swal.fire({
+        title: title,
+        html: text,
+        icon: icon,
+        background: darkMode ? "#1e1e1e" : "#fff",
+        color: darkMode ? "#fff" : "#000",
+        confirmButtonColor: darkMode ? "#e91e63" : "#3085d6",
+      });
+    }
+    if (window.history.replaceState) {
+      window.history.replaceState(null, null, window.location.href);
+    }
+  </script>
+        <script type="text/javascript">showAlert('Success', 'Cosmetic <b>cape</b> id <b>2</b> has been added to <b>SantiagoJRM</b>.<br><br><b>Please restart your game to see the change.</b>', 'success')</script>
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="./Cosmetics - CMPanel_files/material-dashboard.min.js.descarga" type="text/javascript"></script>
+  <script type="text/javascript">
+    mode = document.getElementById("dark-version");
+    if (mode.checked) {
+      darkMode(mode);
+    }
+  </script>
+<script defer="" src="./Cosmetics - CMPanel_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;5175adbe0e0b4393b6d8ff4c61a86df6&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
 
-    
-        clearBtn.addEventListener('click', function() {
-            if (!maintenanceMode && confirm('¿Estás seguro de que quieres borrar todos los mensajes?')) {
-                localStorage.removeItem('hexacore_messages');
-                displayMessages();
-            }
-        });
 
-        
-        document.querySelector('.back-link').addEventListener('click', function(e) {
-            if (!maintenanceMode) {
-                e.preventDefault();
-                document.getElementById('bandeja-entrada').classList.remove('visible');
-                window.location.hash = '#contact';
-            }
-        });
-
-        
-        displayMessages();
-
-        
-        displayMessages();
-    </script>
-</body>
-</html>
+</body></html>
